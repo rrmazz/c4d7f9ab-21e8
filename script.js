@@ -206,3 +206,87 @@
 
   sections.forEach(s => observer.observe(s));
 })();
+
+/* ─── 9. EXIT POPUP (Desktop + Mobile) ───────────────────── */
+
+(function initExitPopup() {
+
+    const popup = document.getElementById("exitPopup");
+    const closeBtn = document.getElementById("closeExitPopup");
+
+    if (!popup || !closeBtn) return;
+
+    // Já mostrou nesta visita?
+    if (sessionStorage.getItem("popupShown")) return;
+
+    const isMobile = window.innerWidth <= 768;
+
+    let canShowDesktop = false;
+
+    // Aguarda 20 segundos (Desktop)
+    setTimeout(() => {
+        canShowDesktop = true;
+    }, 20000);
+
+    // ============================
+    // DESKTOP (Exit Intent)
+    // ============================
+
+    if (!isMobile) {
+
+        document.addEventListener("mouseout", (e) => {
+            if (!canShowDesktop) return;
+            if (e.clientY > 5) return;
+            popup.classList.add("show");
+            sessionStorage.setItem("popupShown", "1");
+        });
+    }
+
+    // ============================
+    // MOBILE
+    // ============================
+
+    if (isMobile) {
+        let popupMobileMostrado = false;
+        setTimeout(() => {
+
+            if (popupMobileMostrado) return;
+
+            const porcentagemRolada =
+                (window.scrollY + window.innerHeight) /
+                document.documentElement.scrollHeight;
+
+            // Rolou pelo menos 50% da página
+            if (porcentagemRolada >= 0.5) {
+                popup.classList.add("show");
+                sessionStorage.setItem("popupShown", "1");
+                popupMobileMostrado = true;
+            }
+        }, 25000);
+    }
+
+    // ============================
+    // FECHAR
+    // ============================
+
+    const fechar = () => {
+        popup.classList.remove("show");
+    };
+
+    closeBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        fechar();
+    });
+
+    popup.addEventListener("click", (e) => {
+        if (e.target === popup) {
+            fechar();
+        }
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            fechar();
+        }
+    });
+})();
