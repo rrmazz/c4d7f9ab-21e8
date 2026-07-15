@@ -217,13 +217,13 @@ details summary::-webkit-details-marker { display: none; }
     font-size:2.2rem;
     font-weight:800;
     color:#1C7095;
-    letter-spacing:-2px;
+    letter-spacing: -1px;
 }
 
 .logo-subtitle{
     font-family:'Poppins',sans-serif;
     font-size:0.85rem;
-    font-weight:300;
+    font-weight:400;
     color:#1C7095;
     letter-spacing:0.5px;
     margin-top:-2px;
@@ -492,7 +492,6 @@ details summary::-webkit-details-marker { display: none; }
   font-weight: 600;
   color: var(--color-text-muted);
   letter-spacing: 0.06em;
-  text-transform: uppercase;
   margin-bottom: var(--space-xl);
 }
 .stats__grid {
@@ -564,6 +563,47 @@ details summary::-webkit-details-marker { display: none; }
 .feat-card__icon--orange { background: var(--c-orange-bg); color: var(--c-orange); }
 .feat-card__icon--pink   { background: var(--c-pink-bg);   color: var(--c-pink); }
 .feat-card__icon--green  { background: var(--c-green-bg);  color: var(--c-green); }
+
+/* Eyebrow do card: número + categoria, no tom de cor primário do site */
+.feat-card__eyebrow {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+/* Lista de destaques do card */
+.feat-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: var(--space-sm);
+}
+.feat-card__list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+.feat-card__list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+
+
+
+
+
+
 
 .feat-card h3 {
   font-family: var(--font-display);
@@ -878,7 +918,7 @@ details summary::-webkit-details-marker { display: none; }
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.2);
   backdrop-filter: blur(8px);
-  max-width: 320px;
+  max-width: 335px;
   margin-inline: auto;
 }
 .cta-banner__screen-bar {
@@ -888,7 +928,8 @@ details summary::-webkit-details-marker { display: none; }
   border-bottom: 1px solid rgba(255,255,255,.1);
 }
 .cta-banner__screen-bar span { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.35); }
-.cta-banner__screen-body { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; padding: 14px; }
+.cta-banner__screen-body { display: flex; grid-template-columns: 1fr 1fr 1fr; gap: 8px; padding: 14px; }
+
 .cta-banner__screen-card {
   aspect-ratio: 3/4;
   background: rgba(255,255,255,.18);
@@ -896,13 +937,13 @@ details summary::-webkit-details-marker { display: none; }
   border: 1px solid rgba(255,255,255,.12);
 }
 
-/* ── 13. FOOTER ───────────────────────────────── */
+/* ── 13. FOOTER ─────────────────────────────────
 .footer { background: var(--color-bg-dark); color: var(--color-text-light); }
 
 .footer__top {
   display: grid;
-  gap: var(--space-3xl);
-  padding: var(--space-4xl) 0 var(--space-3xl);
+  gap: var(--space-2xl);
+  padding: var(--space-2xl) 0 var(--space-2xl);
 }
 
 .footer__logo .logo-icon { color: var(--color-accent); }
@@ -979,6 +1020,108 @@ details summary::-webkit-details-marker { display: none; }
 .footer__bottom p { font-size: 0.82rem; color: var(--color-text-light); }
 .footer__bottom-nav { display: flex; gap: var(--space-lg); }
 .footer__bottom-nav a { font-size: 0.82rem; color: var(--color-text-light); transition: color var(--transition); }
+.footer__bottom-nav a:hover { color: var(--color-white); } * /
+
+/* ── 13. FOOTER ───────────────────────────────── */
+.footer { background: var(--color-bg-dark); color: var(--color-text-light); }
+
+/* Mobile-first: 1 coluna, tudo centralizado */
+.footer__top {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "brand"
+    "contact"
+    "links";
+  gap: var(--space-2xl);
+  padding: var(--space-2xl) 0;
+  text-align: center;
+  justify-items: center;
+}
+
+/* Novas classes: apenas amarram cada coluna à sua área no grid */
+.footer__brand       { grid-area: brand;}
+.footer__col--contact{ grid-area: contact; }
+.footer__col--links  { grid-area: links; }
+
+.footer__logo .logo-icon { color: var(--color-accent); }
+.footer__logo .logo-text { color: var(--color-white); }
+
+.footer__brand p {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--color-text-light);
+  margin: var(--space-md) 0 var(--space-lg);
+  max-width: 280px;
+}
+
+.footer__col-title {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+  padding-top: 20px
+}
+
+.footer__links { display: flex; flex-direction: column; gap: 0.5em; align-items: center; }
+.footer__links a {
+  font-size: 0.88rem;
+  color: var(--color-text-light);
+  transition: color var(--transition);
+}
+.footer__links a:hover { color: var(--color-white); }
+
+/* Coluna "Links": exibição horizontal (em vez de lista vertical) */
+.footer__col--links .footer__links {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--space-md) var(--space-md); /* espaço vertical / horizontal entre itens */
+}
+
+/* Lista de contato: itens bem alinhados verticalmente + boa quebra no endereço */
+.footer__contact {
+  gap: 14px;
+  font-size: 0.88rem;
+  color: var(--color-text-light);
+}
+.footer__contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  max-width: 320px;
+  line-height: 1.6;
+}
+
+.footer__socials { display: flex; gap: var(--space-sm); justify-content: center; }
+.footer__social-link {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(126,200,227,.15);
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+  transition: background var(--transition), color var(--transition);
+}
+.footer__social-link:hover { background: var(--color-primary); color: white; }
+
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,.07);
+  padding: var(--space-lg) 0;
+}
+.footer__bottom-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  align-items: center;
+  text-align: center;
+}
+.footer__bottom p { font-size: 0.82rem; color: var(--color-text-light); }
+.footer__bottom-nav { display: flex; gap: var(--space-lg); }
+.footer__bottom-nav a { font-size: 0.82rem; color: var(--color-text-light); transition: color var(--transition); }
 .footer__bottom-nav a:hover { color: var(--color-white); }
 
 /* ── 14. VIDEO MODAL ──────────────────────────── */
@@ -1033,6 +1176,22 @@ details summary::-webkit-details-marker { display: none; }
   }
 }
 
+/* Footer — Tablet: 2 colunas (marca em cima, contato + links embaixo) */
+  .footer__top {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "brand  brand"
+      "contact links";
+    text-align: left;
+    justify-items: start;
+  }
+  .footer__brand p { margin-inline: 0; }
+  .footer__socials { justify-content: center; }
+  .footer__links,
+  .footer__contact li { align-items: flex-start; }
+  .footer__contact li { max-width: none; }
+
+
 /* ── 16. RESPONSIVE — DESKTOP (≥1024px) ──────── */
 @media (min-width: 1024px) {
   :root { --container-pad: var(--space-2xl); }
@@ -1065,9 +1224,30 @@ details summary::-webkit-details-marker { display: none; }
   /* CTA banner */
   .cta-banner__inner { grid-template-columns: 1fr 1fr; }
 
-  /* Footer */
-  .footer__top { grid-template-columns: 1.6fr 1fr 1fr 1fr; }
+  /* Footer 
+  /* Esse código foi feito quando o footer tinha 4 colunas iguais (Empresa, Serviços, Redes Sociais etc.). .footer__top { grid-template-columns: 1.6fr 1fr 1fr 1fr; } 
+  .footer__top{ grid-template-columns: 1.4fr 1.8fr 0.8fr; 
+    gap:70px;
+    align-items:flex-start;
+}
   .footer__bottom-inner { flex-direction: row; justify-content: space-between; align-items: center; }
+  .footer__contact { gap:18px; } */
+
+  /* Footer — Desktop: 3 colunas na proporção ~30% / 45% / 25% */
+  .footer__brand { padding-left: var(--space-lg); /* afasta a coluna do canto esquerdo */ }
+  .footer__top {
+    grid-template-columns: 2.0fr 4.0fr 2.0fr; /* brand ~25% | contact ~50% | links ~25% */
+    grid-template-areas: "brand contact links";
+    gap: 70px;
+    align-items: flex-start;
+  }
+  .footer__bottom-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+  .footer__contact { gap: 18px; }
 }
 
 /* ── 17. REDUCED MOTION ───────────────────────── */
@@ -1076,4 +1256,77 @@ details summary::-webkit-details-marker { display: none; }
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
   }
+}
+
+/*=====================================
+  EXIT POPUP
+======================================*/
+
+.exit-popup{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(6px);
+    opacity:0;
+    visibility:hidden;
+    transition:.35s;
+    z-index:99999;
+}
+
+.exit-popup.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.exit-popup__box{
+    width:420px;
+    max-width:92%;
+    background:#fff;
+    border-radius:20px;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 30px 60px rgba(0,0,0,.25);
+    transform:translateY(40px);
+    transition:.35s;
+}
+
+.exit-popup.show .exit-popup__box{
+    transform:none;
+}
+
+.exit-popup__box h2{
+    color:#1C7095;
+    margin-bottom:15px;
+}
+
+.exit-popup__box p{
+    line-height:1.7;
+    color:#555;
+    margin-bottom:20px;
+}
+
+.exit-popup__list{
+    text-align:left;
+    margin:25px auto;
+    width:220px;
+}
+
+.exit-popup__list li{
+    margin:10px 0;
+    list-style:none;
+}
+
+.exit-popup__close{
+    display:block;
+    margin-top:20px;
+    color:#777;
+    cursor:pointer;
+    text-decoration:none;
+}
+
+.exit-popup__close:hover{
+    color:#1C7095;
 }
