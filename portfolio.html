@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio | Row Soluções Web</title>
+  <meta name="description" content="Conheça soluções demonstrativas desenvolvidas pela Row Soluções Web para diferentes necessidades de negócio: sites, sistemas, IA, dashboards, marca e infraestrutura." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+  <!-- ===== HEADER / NAV (idêntico ao index.html) ===== -->
+  <header class="header" id="header">
+     <div class="container header__inner">
+      <a href="#" class="header__logo">
+        <img src="logo1.png" alt="Row Soluções Web" style="width: 140px; height: 80px; object-fit: contain " />
+        <!-- <div class="logo-brand">
+          <span class="logo-row">row</span>
+          <span class="logo-subtitle">soluções web</span>
+        </div> -->
+      </a>
+
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html#home" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="index.html#sobre" class="nav__link">Sobre</a>
+          </li>
+          <li class="nav__item">
+            <a href="index.html#servicos" class="nav__link">Serviços</a>
+          </li>
+          <li class="nav__item">
+            <a href="portfolio.html" class="nav__link">Portfólio</a>
+          </li>
+          <li class="nav__item">
+            <a href="https://wa.me/0000000000000" target="_blank" class="nav__link">Contato </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== PORTFOLIO HERO ===== -->
+    <section class="portfolio-hero" id="portfolio-hero">
+      <div class="hero__bg-blob" aria-hidden="true"></div>
+      <div class="container portfolio-hero__inner">
+        <span class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          Portfólio
+        </span>
+        <h1 class="portfolio-hero__title">Nosso Portfólio</h1>
+        <p class="portfolio-hero__desc">
+          Conheça algumas das soluções digitais desenvolvidas pela Row
+          Soluções Web para diferentes necessidades de negócio.
+        </p>
+        <div class="hero__cta" style="justify-content: center; margin-top: var(--space-xl);">
+          <a href="https://wa.me/0000000000000" target="_blank" class="btn btn--primary btn--lg">Solicitar orçamento</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FILTROS ===== -->
+    <section class="portfolio-filters">
+      <div class="container">
+        <ul class="portfolio-filters__list" id="portfolioFilters">
+          <li><button type="button" class="portfolio-filter-btn portfolio-filter-btn--active" data-filter="todos">Todos</button></li>
+          <li><button type="button" class="portfolio-filter-btn" data-filter="presenca-digital">Presença Digital</button></li>
+          <li><button type="button" class="portfolio-filter-btn" data-filter="sistemas-automacao">Sistemas e Automação</button></li>
+          <li><button type="button" class="portfolio-filter-btn" data-filter="inteligencia-artificial">Inteligência Artificial</button></li>
+          <li><button type="button" class="portfolio-filter-btn" data-filter="identidade-visual">Identidade Visual e Marketing</button></li>
+          <li><button type="button" class="portfolio-filter-btn" data-filter="inteligencia-negocios">Inteligência de Negócios</button></li>
+          <li><button type="button" class="portfolio-filter-btn" data-filter="infraestrutura-digital">Infraestrutura Digital</button></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== PORTFOLIO GRID ===== -->
+    <section class="portfolio-grid" id="projetos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Soluções Demonstrativas</span>
+          <h2 class="section-title">Tipos de Projetos que Desenvolvemos</h2>
+          <p>
+            Os cards abaixo representam exemplos ilustrativos dos tipos de
+            solução que a Row Soluções Web desenvolve — não correspondem a
+            entregas específicas para clientes reais.
+          </p>
+        </div>
+
+        <div class="portfolio-grid__cards" id="portfolioGrid">
+
+          <!-- 1. Landing Page de Conversão -->
+          <article class="portfolio-card" data-category="presenca-digital">
+            <div class="portfolio-card__media">
+              <span class="portfolio-card__status">Solução Demonstrativa</span>
+              <i class="bi bi-layout-text-window-reverse"></i>
+            </div>
+            <div class="portfolio-card__body">
+              <div class="portfolio-card__tags">
+                <span class="portfolio-card__tag">Presença Digital</span>
+              </div>
+              <h3>Landing Page de Conversão</h3>
+              <p>
+                Estrutura desenvolvida para captação de leads com foco em
+                campanhas de marketing e geração de contatos.
+              </p>
+
+              <div class="portfolio-card__meta">
+                <span class="portfolio-card__meta-label">Tecnologias</span>
+                <div class="portfolio-card__meta-list">
+                  <span class="portfolio-card__chip">HTML5</span>
+                  <span class="portfolio-card__chip">CSS3</span>
+                  <span class="portfolio-card__chip">JavaScript</span>
+                </div>
+              </div>
+
+              <div class="portfolio-card__meta">
+                <span class="portfolio-card__meta-label">Serviços relacionados</span>
+                <div class="portfolio-card__meta-list">
+                  <span class="portfolio-card__chip">Sites Institucionais</span>
+                  <span class="portfolio-card__chip">One Pages</span>
+                  <span class="portfolio-card__chip">Landing Pages</span>
+                </div>
+              </div>
+
+              <a href="index.html#servicos" class="btn btn--outline-dark">Ver detalhes</a>
+            </div>
+          </article>
+
+          <!-- 2. Sistema Web Personalizado -->
+          <article class="portfolio-card" data-category="sistemas-automacao">
+            <div class="portfolio-card__media">
+              <span class="portfolio-card__status">Solução Demonstrativa</span>
+              <i class="bi bi-diagram-3"></i>
+            </div>
+            <div class="portfolio-card__body">
+              <div class="portfolio-card__tags">
+                <span class="portfolio-card__tag">Sistemas e Automação</span>
+              </div>
+              <h3>Sistema Web Personalizado</h3>
+              <p>
+                Solução demonstrativa com dashboard, controle de processos e
+                integração entre módulos administrativos.
+              </p>
+
+              <div class="portfolio-card__meta">
+                <span class="portfolio-card__meta-label">Tecnologias</span>
+                <div class="portfolio-card__meta-list">
+                  <span class="portfolio-card__chip">JavaScript</span>
+                  <span class="portfolio-card__chip">Node.js</span>
+                  <span class="portfolio-card__chip">Banco de Dados</span>
+                </div>
+              </div>
+
+              <div class="portfolio-card__meta">
+                <span class="portfolio-card__meta-label">Serviços relacionados</span>
+                <div class="portfolio-card__meta-list">
+                  <span class="portfolio-card__chip">Sistemas Web</span>
+                  <span class="portfolio-card__chip">Portais Corporativos</span>
+                  <span class="portfolio-card__chip">Automações de Processos</span>
+                </div>
+              </div>
+
+              <a href="index.html#servicos" class="btn btn--outline-dark">Ver detalhes</a>
+            </div>
+          </article>
+
+          <!-- 3. Assistente Inteligente com IA -->
+          <article class="portfolio-card" data-category="inteligencia-artificial">
+            <div class="portfolio-card__media">
+              <span class="portfolio-card__status">Solução Demonstrativa</span>
+              <i class="bi bi-robot"></i>
+            </div>
+            <div class="portfolio-card__body">
+              <div class="portfolio-card__tags">
+                <span class="portfolio-card__tag">Inteligência Artificial</span>
+              </div>
+              <h3>Assistente Inteligente com IA</h3>
+              <p>
+                Exemplo de automação com Inteligência Artificial para
+                atendimento e suporte a clientes.
+              </p>
+
+              <div class="portfolio-card__meta">
+                <span class="portfolio-card__meta-label">Tecnologias</span>
+                <div class="portfolio-card__meta-list">
+                  <span class="portfolio-card__chip">IA Generativa</span>
+                  <span class="portfolio-card__chip">APIs de Chat</span>
+                  <span class="portfolio-card__chip">Automação de Fluxos</span>
+                </div>
+              </div>
+
+              <div class="portfolio-card__meta">
+                <span class="portfolio-card__meta-label">Serviços relacionados</span>
+                <div class="portfolio-card__meta-list">
+                  <span class="portfolio-card__chip">Chatbots Inteligentes</span>
+                  <span class="portfolio-card__chip">Agentes de IA</span>
+                  <span class="portfolio-card__chip">Assistentes Virtuais</span>
+                </div>
+              </div>
+
+              <a href="index.html#servicos" class="btn btn--outline-dark">Ver detalhes</a>
+            </div>
+          </article>
+
+          <!-- 4. Dashboard Executivo -->
+          <article class="portfolio-card" data-category="inteligencia-negocios">
+            <div class="portfolio-card__media">
+              <span class="portfolio-card__status">Solução Demonstrativa</span>
+              <i class="bi bi-bar-chart"></i>
+            </div>
+            <div class="portfolio-card__body">
+              <div class="portfolio-card__tags">
+                <span class="portfolio-card__tag">Inteligência de Negócios</span>
+              </div>
+              <h3>Dashboard Executivo</h3>
+              <p>
+                Painel demonstrativo para acompanhamento de indicadores
+                estratégicos em tempo real.
+              </p>
+
+              <div class="portfolio-card__meta">
+                <span class="portfolio-card__meta-label">Tecnologias</span>
+                <div class="portfolio-card__meta-list">
+                  <span class="portfolio-card__chip">JavaScript</span>
+                  <span class="portfolio-card__chip">Bibliotecas de Gráficos</span>
+                  <span class="portfolio-card__chip">Banco de Dados</span>
+                </div>
+              </div>
+
+              <div class="portfolio-card__meta">
+                <span class="portfolio-card__meta-label">Serviços relacionados</span>
+                <div class="portfolio-card__meta-list">
+                  <span class="portfolio-card__chip">Dashboards Personalizados</span>
+                  <span class="portfolio-card__chip">Relatórios Gerenciais</span>
+                </div>
+              </div>
+
+              <a href="index.html#servicos" class="btn btn--outline-dark">Ver detalhes</a>
+            </div>
+          </article>
+
+          <!-- 5. Identidade Visual Corporativa -->
+          <article class="portfolio-card" data-category="identidade-visual">
+            <div class="portfolio-card__media">
+              <span class="portfolio-card__status">Solução Demonstrativa</span>
+              <i class="bi bi-palette"></i>
+            </div>
+            <div class="portfolio-card__body">
+              <div class="portfolio-card__tags">
+                <span class="portfolio-card__tag">Identidade Visual e Marketing</span>
+              </div>
+              <h3>Identidade Visual Corporativa</h3>
+              <p>
+                Conjunto de logomarca, manual de marca e materiais
+                institucionais para fortalecer a presença da empresa.
+              </p>
+
+              <div class="portfolio-card__meta">
+                <span class="portfolio-card__meta-label">Tecnologias</span>
+                <div class="portfolio-card__meta-list">
+                  <span class="portfolio-card__chip">Design Gráfico</span>
+                  <span class="portfolio-card__chip">Identidade de Marca</span>
+                </div>
+              </div>
+
+              <div class="portfolio-card__meta">
+                <span class="portfolio-card__meta-label">Serviços relacionados</span>
+                <div class="portfolio-card__meta-list">
+                  <span class="portfolio-card__chip">Logomarca</span>
+                  <span class="portfolio-card__chip">Manual de Marca</span>
+                  <span class="portfolio-card__chip">Cartões e Folders</span>
+                </div>
+              </div>
+
+              <a href="index.html#servicos" class="btn btn--outline-dark">Ver detalhes</a>
+            </div>
+          </article>
+
+          <!-- 6. Infraestrutura e Performance -->
+          <article class="portfolio-card" data-category="infraestrutura-digital">
+            <div class="portfolio-card__media">
+              <span class="portfolio-card__status">Solução Demonstrativa</span>
+              <i class="bi bi-cloud"></i>
+            </div>
+            <div class="portfolio-card__body">
+              <div class="portfolio-card__tags">
+                <span class="portfolio-card__tag">Infraestrutura Digital</span>
+              </div>
+              <h3>Infraestrutura e Performance</h3>
+              <p>
+                Otimização de desempenho, monitoramento de disponibilidade e
+                auditoria de performance web.
+              </p>
+
+              <div class="portfolio-card__meta">
+                <span class="portfolio-card__meta-label">Tecnologias</span>
+                <div class="portfolio-card__meta-list">
+                  <span class="portfolio-card__chip">Hospedagem Web</span>
+                  <span class="portfolio-card__chip">Monitoramento</span>
+                  <span class="portfolio-card__chip">Ferramentas de Performance</span>
+                </div>
+              </div>
+
+              <div class="portfolio-card__meta">
+                <span class="portfolio-card__meta-label">Serviços relacionados</span>
+                <div class="portfolio-card__meta-list">
+                  <span class="portfolio-card__chip">Hospedagem Compartilhada</span>
+                  <span class="portfolio-card__chip">Otimização de Performance</span>
+                  <span class="portfolio-card__chip">Monitoramento de Disponibilidade</span>
+                </div>
+              </div>
+
+              <a href="index.html#servicos" class="btn btn--outline-dark">Ver detalhes</a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Mensagem exibida quando um filtro não retorna resultados -->
+        <p class="portfolio-empty" id="portfolioEmpty">
+          Ainda não há soluções cadastradas nesta categoria. Em breve traremos novidades.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ===== DIFERENCIAIS ===== -->
+    <section class="diff-section" id="diferenciais">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Como Trabalhamos</span>
+          <h2 class="section-title">Nossos Diferenciais</h2>
+        </div>
+
+        <div class="diff-grid">
+          <div class="diff-item">
+            <span class="diff-item__number">01</span>
+            <div class="diff-item__icon"><i class="bi bi-clipboard-data"></i></div>
+            <h4>Planejamento Estratégico</h4>
+            <p>Entendimento profundo do negócio antes de qualquer linha de código.</p>
+          </div>
+          <div class="diff-item">
+            <span class="diff-item__number">02</span>
+            <div class="diff-item__icon"><i class="bi bi-vector-pen"></i></div>
+            <h4>UX/UI Design</h4>
+            <p>Interfaces pensadas para gerar clareza, confiança e conversão.</p>
+          </div>
+          <div class="diff-item">
+            <span class="diff-item__number">03</span>
+            <div class="diff-item__icon"><i class="bi bi-code-slash"></i></div>
+            <h4>Desenvolvimento Personalizado</h4>
+            <p>Código limpo, performático e preparado para crescer.</p>
+          </div>
+          <div class="diff-item">
+            <span class="diff-item__number">04</span>
+            <div class="diff-item__icon"><i class="bi bi-bug"></i></div>
+            <h4>Testes e Validação</h4>
+            <p>Verificação de funcionalidades, performance e responsividade.</p>
+          </div>
+          <div class="diff-item">
+            <span class="diff-item__number">05</span>
+            <div class="diff-item__icon"><i class="bi bi-rocket-takeoff"></i></div>
+            <h4>Implantação</h4>
+            <p>Publicação segura, com acompanhamento em cada etapa.</p>
+          </div>
+          <div class="diff-item">
+            <span class="diff-item__number">06</span>
+            <div class="diff-item__icon"><i class="bi bi-arrow-repeat"></i></div>
+            <h4>Evolução Contínua</h4>
+            <p>Melhorias constantes com base em dados e resultados reais.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA BANNER (mesmo padrão do site) ===== -->
+    <section class="cta-banner">
+      <div class="container cta-banner__inner">
+        <div class="cta-banner__content">
+          <span class="section-eyebrow section-eyebrow--light">Vamos conversar?</span>
+          <h2 class="cta-banner__title">Vamos desenvolver o próximo projeto da sua empresa?</h2>
+          <p class="cta-banner__desc">Fale com nossa equipe e descubra como podemos criar uma solução digital
+            personalizada para o seu negócio.</p>
+          <a href="https://wa.me/0000000000000" target="_blank" class="btn btn--white">Solicitar orçamento</a>
+        </div>
+        <div class="cta-banner__visual" aria-hidden="true">
+          <div class="cta-banner__screen">
+            <div class="cta-banner__screen-bar"><span></span><span></span><span></span></div>
+            <div class="cta-banner__screen-body">
+              <iframe src="https://www.google.com/maps?q=Ribeir%C3%A3o+Preto,+SP&output=embed"
+                title="Localização Row Soluções Web" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER (idêntico ao index.html) ===== -->
+  <footer class="footer">
+    <div class="container footer__top">
+
+      <!-- Coluna 1 -->
+      <div class="footer__brand">
+        <a href="#" class="header__logo">
+        <img src="logo1.png" alt="Row Soluções Web" style="width: 140px; height: 80px; object-fit: contain " />
+        <!-- <div class="logo-brand">
+          <span class="logo-row">row</span>
+          <span class="logo-subtitle">soluções web</span>
+        </div> -->
+      </a>
+        <p class="footer__brand">Soluções digitais que </br> impulsionam o seu negócio.</p>
+        <ul class="footer__socials">
+          <li>
+            <a href="https://x.com/" target="_blank" class="footer__social-link" aria-label="Twitter">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://br.linkedin.com/" target="_blank" class="footer__social-link" aria-label="LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/" target="_blank" class="footer__social-link" aria-label="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/" target="_blank" class="footer__social-link" aria-label="YouTube">
+              <i class="bi bi-youtube"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Coluna 2 -->
+      <div class="footer__col footer__col--contact">
+        <h4 class="footer__col-title">Entre em Contato</h4>
+        <ul class="footer__links footer__contact">
+          <li>
+            <i class="bi bi-envelope-fill"></i>
+            contato@rowsolucoes.com.br
+          </li>
+          <li>
+            <i class="bi bi-telephone-fill"></i>
+            (16) 3456-7890
+          </li>
+          <li>
+            <i class="bi bi-geo-alt-fill"></i>
+            Ribeirão Preto | CEP: 14090-000
+          </li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3 -->
+      <div class="footer__col footer__col--links">
+        <h4 class="footer__col-title">Links</h4>
+        <ul class="footer__links">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#servicos">Serviços</a></li>
+          <!-- <li><a href="portfolio.html">Portfólio</a></li> -->
+          <li><a href="https://wa.me/0000000000000" target="_blank">Contato</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>© 2026 Row Soluções Web — Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== EXIT POPUP (idêntico ao index.html) ===== -->
+  <div id="exitPopup" class="exit-popup">
+    <div class="exit-popup__box">
+      <h2>🚀 Espere um instante!</h2>
+      <p>
+        Ainda não fez seu orçamento?
+        Descubra quanto custa colocar seu projeto na internet.
+      </p>
+      <ul class="exit-popup__list">
+        <li>✅ Atendimento rápido</li>
+        <li>✅ Orçamento gratuito</li>
+        <li>✅ Sem compromisso</li>
+      </ul>
+      <a href="https://wa.me/0000000000000" target="_blank" class="btn btn--primary btn--lg">
+        📲 Solicitar orçamento
+      </a>
+      <a href="#" id="closeExitPopup" class="exit-popup__close">
+        Agora não
+      </a>
+    </div>
+  </div>
+
+  <!-- script.js global (header sticky, menu mobile, exit popup) — não foi alterado -->
+  <script src="script.js"></script>
+
+  <!-- Script exclusivo desta página: filtro de categorias do portfólio -->
+  <script>
+    (function initPortfolioFilters() {
+      const filterButtons = document.querySelectorAll('#portfolioFilters .portfolio-filter-btn');
+      const cards = document.querySelectorAll('#portfolioGrid .portfolio-card');
+      const emptyMsg = document.getElementById('portfolioEmpty');
+      if (!filterButtons.length || !cards.length) return;
+
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const filter = btn.dataset.filter;
+
+          // Alterna o estado visual "ativo" entre os botões de filtro
+          filterButtons.forEach(b => b.classList.remove('portfolio-filter-btn--active'));
+          btn.classList.add('portfolio-filter-btn--active');
+
+          // Mostra apenas os cards que pertencem à categoria selecionada
+          let visibleCount = 0;
+          cards.forEach(card => {
+            const categories = (card.dataset.category || '').split(' ');
+            const matches = filter === 'todos' || categories.includes(filter);
+            card.style.display = matches ? '' : 'none';
+            if (matches) visibleCount++;
+          });
+
+          emptyMsg.classList.toggle('is-visible', visibleCount === 0);
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>
