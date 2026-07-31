@@ -43,7 +43,7 @@
           <li class="nav__item">
             <a href="#servicos" class="nav__link">Serviços</a>
           </li>
-           <li class="nav__item">
+          <li class="nav__item">
             <a href="portfolio.html" class="nav__link">Portfólio</a>
           </li>
           <li class="nav__item">
@@ -565,6 +565,86 @@
       </div>
     </section>-->
 
+
+
+
+    <!-- ===== PORTFÓLIO SHOWCASE ===== -->
+    <!-- Inserir esta seção entre "Nossos Serviços" e o "CTA Final" -->
+    <section class="portfolio-showcase" id="portfolio-showcase">
+      <div class="container">
+
+        <header class="portfolio-showcase__header">
+          <span class="portfolio-showcase__eyebrow">Portfólio</span>
+          <h2 class="portfolio-showcase__title">Conheça nossos projetos</h2>
+          <p class="portfolio-showcase__desc">Confira alguns dos projetos desenvolvidos pela Row Soluções Web.</p>
+        </header>
+
+        <div class="portfolio-showcase__list">
+
+          <!-- Bloco 1 — imagem à esquerda -->
+          <article class="portfolio-item">
+            <div class="portfolio-image">
+              <span class="portfolio-image__circle" aria-hidden="true"></span>
+              <div class="portfolio-image__frame">
+                <img src="img1.jpeg" alt="Projeto de site institucional desenvolvido pela Row Soluções Web"
+                  loading="lazy" />
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-tag">Desenvolvimento Web</span>
+              <h3 class="portfolio-title">Sites Institucionais</h3>
+              <p class="portfolio-text">
+                Criamos sites modernos, rápidos e responsivos para empresas que
+                desejam fortalecer sua presença digital.
+              </p>
+              <a href="portfolio.html#portfolio" class="portfolio-btn">Saiba mais</a>
+            </div>
+          </article>
+
+          <!-- Bloco 2 — invertido: texto à esquerda, imagem à direita -->
+          <article class="portfolio-item portfolio-item--reverse">
+            <div class="portfolio-image">
+              <span class="portfolio-image__circle" aria-hidden="true"></span>
+              <div class="portfolio-image__frame">
+                <img src="portfolio-sistemas-personalizados.jpg"
+                  alt="Sistema personalizado desenvolvido pela Row Soluções Web" loading="lazy" />
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-tag">Sistemas Web</span>
+              <h3 class="portfolio-title">Sistemas Personalizados</h3>
+              <p class="portfolio-text">
+                Desenvolvemos sistemas sob medida para automatizar processos e
+                aumentar a produtividade.
+              </p>
+              <a href="portfolio.html#portfolio" class="portfolio-btn">Saiba mais</a>
+            </div>
+          </article>
+
+          <!-- Bloco 3 — imagem à esquerda -->
+          <article class="portfolio-item">
+            <div class="portfolio-image">
+              <span class="portfolio-image__circle" aria-hidden="true"></span>
+              <div class="portfolio-image__frame">
+                <img src="portfolio-automacoes-inteligentes.jpg"
+                  alt="Automação com Inteligência Artificial desenvolvida pela Row Soluções Web" loading="lazy" />
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-tag">Inteligência Artificial</span>
+              <h3 class="portfolio-title">Automações Inteligentes</h3>
+              <p class="portfolio-text">
+                Aplicamos IA para automatizar tarefas, integrar sistemas e
+                melhorar o atendimento ao cliente.
+              </p>
+              <a href="portfolio.html#portfolio" class="portfolio-btn">Saiba mais</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
     <!-- ===== CTA BANNER ===== -->
     <section class="cta-banner">
       <div class="container cta-banner__inner">
@@ -575,16 +655,21 @@
             personalizada para impulsionar os resultados da sua empresa.</p>
           <a href="https://wa.me/0000000000000" target="_blank" class="btn btn--white">Solicitar orçamento</a>
         </div>
+        <!-- Moldura que fica atrás da localização
         <div class="cta-banner__visual" aria-hidden="true">
           <div class="cta-banner__screen">
-            <div class="cta-banner__screen-bar"><span></span><span></span><span></span></div>
-            <div class="cta-banner__screen-body">
-              <iframe src="https://www.google.com/maps?q=Ribeir%C3%A3o+Preto,+SP&output=embed"
-                title="Localização Row Soluções Web" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-              <!-- <div class="cta-banner__screen-card"></div>
-              <div class="cta-banner__screen-card"></div>
-              <div class="cta-banner__screen-card"></div> -->
+            <div class="cta-banner__screen-bar"><span></span><span></span><span></span></div> 
+          </div> 
+        </div> -->
+        <div class="cta-banner__screen-body">
+          <div class="location-card">
+            <div class="location-card__item">
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>Ribeirão Preto - SP</span>
+            </div>
+            <div class="location-card__status offline" id="officeStatus">
+              <span class="status-dot"></span>
+              <span id="statusText">Estamos Offline</span>
             </div>
           </div>
         </div>
