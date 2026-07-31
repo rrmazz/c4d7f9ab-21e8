@@ -290,3 +290,27 @@
         }
     });
 })();
+
+const status = document.getElementById("officeStatus");
+const text = document.getElementById("statusText");
+
+if (status) {
+
+    const agora = new Date();
+    const hora = agora.getHours();
+
+    status.classList.remove("online", "offline");
+
+    if (hora >= 8 && hora < 18) {
+
+        status.classList.add("online");
+        text.textContent = "Estamos Online";
+
+    } else {
+
+        status.classList.add("offline");
+        text.textContent = "Estamos Offline";
+
+    }
+
+}
