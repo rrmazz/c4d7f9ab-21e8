@@ -1868,3 +1868,319 @@ details summary::-webkit-details-marker { display: none; }
 .exit-popup__close:hover{
     color:#1C7095;
 }
+
+/* =============================================
+   PORTFOLIO SHOWCASE
+   Seção "Conheça nossos projetos"
+   Mobile-first | imagem + texto alternados
+   ============================================= */
+
+.portfolio-showcase {
+  padding: var(--space-4xl) 0;
+  background: var(--color-white);
+}
+
+/* ── Cabeçalho da seção ───────────────────────── */
+.portfolio-showcase__header {
+  text-align: center;
+  max-width: 640px;
+  margin-inline: auto;
+  margin-bottom: var(--space-3xl);
+}
+.portfolio-showcase__eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  padding: 0.3em 0.9em;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-md);
+}
+.portfolio-showcase__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+.portfolio-showcase__desc {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* ── Lista de blocos ──────────────────────────── */
+.portfolio-showcase__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4xl);
+}
+
+/* ── Bloco individual (imagem + texto) ────────── */
+.portfolio-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+/* ── Bloco de imagem ──────────────────────────── */
+.portfolio-image {
+  position: relative;
+}
+
+/* Círculo decorativo azul claro atrás da imagem */
+.portfolio-image__circle {
+  position: absolute;
+  top: -8%;
+  left: -8%;
+  width: 65%;
+  height: 65%;
+  background: var(--color-primary-light);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* Moldura da imagem: cantos arredondados + sombra + corte para o hover */
+.portfolio-image__frame {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.portfolio-image__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition);
+}
+.portfolio-image__frame:hover img {
+  transform: scale(1.06);
+}
+
+/* ── Bloco de conteúdo (texto) ────────────────── */
+.portfolio-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.portfolio-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  padding: 0.3em 0.9em;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-md);
+}
+
+.portfolio-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: var(--space-md);
+}
+
+.portfolio-text {
+  font-size: 0.98rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  max-width: 460px;
+  margin-bottom: var(--space-xl);
+}
+
+/* Botão azul com hover — mesmo padrão visual do site */
+.portfolio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.75em 2em;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(27, 94, 138, .35);
+  transition: all var(--transition);
+}
+.portfolio-btn:hover {
+  background: var(--color-primary-dark);
+  box-shadow: 0 6px 20px rgba(20, 73, 112, .45);
+  transform: translateY(-1px);
+}
+
+/* ── RESPONSIVO — TABLET/DESKTOP (≥1024px) ────── */
+@media (min-width: 1024px) {
+  .portfolio-item {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .portfolio-content {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  /* Bloco invertido: imagem passa para a direita, texto para a esquerda */
+  .portfolio-item--reverse .portfolio-image {
+    order: 2;
+  }
+  .portfolio-item--reverse .portfolio-content {
+    order: 1;
+  }
+
+  /* Círculo decorativo espelhado quando a imagem está à direita */
+  .portfolio-item--reverse .portfolio-image__circle {
+    left: auto;
+    right: -8%;
+  }
+}
+
+/* =============================================
+   CASE — GALERIA (placeholders de interface)
+   Novas classes — nenhuma classe existente foi alterada
+   ============================================= */
+
+.case-gallery {
+  padding: var(--space-4xl) 0;
+  background: var(--color-white);
+}
+
+.case-gallery__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.case-gallery__item {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-accent-soft));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.case-gallery__item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+.case-gallery__item i {
+  font-size: 2rem;
+  color: var(--color-primary);
+  opacity: 0.75;
+}
+.case-gallery__caption {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 640px) {
+  .case-gallery__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .case-gallery__grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+
+/*==============================
+    LOCALIZAÇÃO
+==============================*/
+
+.cta-banner__screen-body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height: 220px;
+}
+
+.location-card{
+    background:#d3ecee;
+    border-radius:18px;
+    padding:28px;
+    width:280px;
+    box-shadow:0 15px 35px rgba(0,0,0,.10);
+    transition:.3s;
+}
+
+.location-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 25px 45px rgba(0,0,0,.15);
+}
+
+.location-card__item{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:22px;
+}
+
+.location-card__item i{
+    font-size:34px;
+    color:#1C7095;
+}
+
+.location-card__item span{
+    font-size:18px;
+    line-height:1.35;
+    font-weight:700;
+    color:#1C7095;
+}
+
+.location-card__status{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:17px;
+    font-weight:600;
+    color:#243447;
+}
+
+.status-dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    transition:.3s;
+}
+
+/* ONLINE */
+.location-card__status.online{
+    color:#16a34a;
+}
+
+.location-card__status.online .status-dot{
+    background:#22c55e;
+    box-shadow:0 0 10px rgba(34,197,94,.6);
+}
+
+/* OFFLINE */
+.location-card__status.offline{
+    color:#dc2626;
+}
+
+.location-card__status.offline .status-dot{
+    background:#ef4444;
+    box-shadow:0 0 10px rgba(239,68,68,.6);
+}
