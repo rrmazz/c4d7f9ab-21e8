@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio | Row Soluções Web</title>
+  <meta name="description"
+    content="Conheça soluções demonstrativas desenvolvidas pela Row Soluções Web para diferentes necessidades de negócio: sites, sistemas, IA, dashboards, marca e infraestrutura." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+  <!-- ===== HEADER / NAV (idêntico ao index.html) ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="header__logo">
+        <img src="logo1.png" alt="Row Soluções Web" style="width: 140px; height: 80px; object-fit: contain " />
+        <!-- <div class="logo-brand">
+          <span class="logo-row">row</span>
+          <span class="logo-subtitle">soluções web</span>
+        </div> -->
+      </a>
+
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html#home" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="index.html#sobre" class="nav__link">Sobre</a>
+          </li>
+          <li class="nav__item">
+            <a href="index.html#servicos" class="nav__link">Serviços</a>
+          </li>
+          <li class="nav__item">
+            <a href="portfolio.html" class="nav__link">Portfólio</a>
+          </li>
+          <li class="nav__item">
+            <a href="https://wa.me/0000000000000" target="_blank" class="nav__link">Contato </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+  <!-- ===== HERO DO PROJETO ===== -->
+  <section class="case-hero">
+    <div class="container case-hero__inner">
+      <a href="portfolio.html" class="case-hero__back">← Voltar para o Portfólio</a>
+      <span class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        Parceiro Estratégico
+      </span>
+      <h1 class="case-hero__title">Ponto da Torra: de loja de bairro a operação digital completa</h1>
+      <p class="case-hero__subtitle">
+        A Row Soluções Web uniu site institucional, loja virtual e sistema
+        interno de gestão em um único projeto — do primeiro wireframe ao
+        suporte contínuo.
+      </p>
+      <div class="case-hero__tags">
+        <span class="case-hero__tag">Site institucional</span>
+        <span class="case-hero__tag">Loja virtual (e-commerce)</span>
+        <span class="case-hero__tag">Sistema interno de gestão</span>
+      </div>
+      <div class="hero__cta" style="margin-top: var(--space-xl);">
+        <a href="https://wa.me/0000000000000" target="_blank" class="btn btn--white">Solicitar orçamento</a>
+        <a href="portfolio.html" class="case-hero__link">Ver todos os projetos →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AVISO DE TRANSPARÊNCIA ===== -->
+  <section class="case-section" style="padding-top: var(--space-2xl); padding-bottom: 0;">
+    <div class="container case-section__inner">
+      <p class="case-results__note" style="margin-bottom: 0;">
+        <strong>Este case tem caráter ilustrativo</strong> e foi elaborado
+        para demonstrar como a Row Soluções Web estrutura projetos que unem
+        site institucional, loja virtual e sistema em um único ecossistema
+        digital. Nome do negócio, depoimento e demais detalhes específicos
+        deste conteúdo são fictícios e utilizados apenas para fins de
+        demonstração de layout.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== SOBRE O PROJETO / FICHA TÉCNICA ===== -->
+  <section class="case-section">
+    <div class="container case-section__inner">
+      <span class="case-section__eyebrow">Sobre o Projeto</span>
+      <h2 class="case-section__title">Ficha técnica do projeto</h2>
+
+      <img src="/assets/img/cases/ponto-da-torra/capa.jpg"
+        alt="Capa do projeto Ponto da Torra desenvolvido pela Row Soluções Web"
+        class="case-section__image" loading="lazy" />
+
+      <table class="case-table">
+        <tbody>
+          <tr>
+            <th>Cliente</th>
+            <td>Ponto da Torra — Cafés Especiais</td>
+          </tr>
+          <tr>
+            <th>Segmento</th>
+            <td>Torrefação e varejo de cafés especiais</td>
+          </tr>
+          <tr>
+            <th>Localização</th>
+            <td>Interior de São Paulo</td>
+          </tr>
+          <tr>
+            <th>Serviços prestados</th>
+            <td>Site institucional, loja virtual e sistema interno de gestão</td>
+          </tr>
+          <tr>
+            <th>Entregável</th>
+            <td>Ecossistema digital integrado (site + e-commerce + sistema)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== O DESAFIO ===== -->
+  <section class="case-section case-section--soft">
+    <div class="container case-section__inner">
+      <span class="case-section__eyebrow">O Desafio</span>
+      <h2 class="case-section__title">Marca, vendas e operação em um só ecossistema</h2>
+      <p>
+        O Ponto da Torra chegou até a Row Soluções Web vendendo café apenas
+        na loja física de bairro, sem site, sem loja virtual e sem controle
+        informatizado de estoque ou de clientes com assinatura recorrente.
+        O desafio era unir marca, vendas e operação em um só ecossistema
+        digital — sem transformar isso em três projetos soltos com três
+        fornecedores diferentes.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== SOLUÇÃO DESENVOLVIDA / FUNCIONALIDADES ===== -->
+  <section class="case-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Solução Desenvolvida</span>
+        <h2 class="section-title">O Projeto em Três Frentes</h2>
+        <p>Um único projeto, estruturado em três entregas complementares:</p>
+      </div>
+
+      <div class="portfolio-showcase__list">
+
+        <!-- Frente 1 — Site institucional -->
+        <article class="portfolio-item">
+          <div class="portfolio-image">
+            <span class="portfolio-image__circle" aria-hidden="true"></span>
+            <div class="portfolio-image__frame">
+              <img src="/assets/img/cases/ponto-da-torra/site-institucional.jpg"
+                alt="Site institucional do Ponto da Torra" loading="lazy" />
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-tag">Site Institucional</span>
+            <h3 class="portfolio-title">A marca com identidade em todos os pontos de contato</h3>
+            <p class="portfolio-text">
+              Desenvolvemos um site institucional responsivo para contar a
+              história da torrefação, apresentar o processo de torra
+              artesanal e reforçar a identidade visual da marca em todos os
+              pontos de contato digital.
+            </p>
+            <ul class="case-list" style="margin-top: 0; margin-bottom: var(--space-xl);">
+              <li><i class="bi bi-check-circle"></i> Design responsivo, rápido e otimizado para conversão</li>
+              <li><i class="bi bi-check-circle"></i> Estrutura pensada para SEO local e busca orgânica</li>
+              <li><i class="bi bi-check-circle"></i> Blog integrado para conteúdo sobre cafés especiais</li>
+            </ul>
+            <a href="index.html#servicos" class="portfolio-btn">Conheça nossos sites institucionais</a>
+          </div>
+        </article>
+
+        <!-- Frente 2 — Loja virtual (invertido) -->
+        <article class="portfolio-item portfolio-item--reverse">
+          <div class="portfolio-image">
+            <span class="portfolio-image__circle" aria-hidden="true"></span>
+            <div class="portfolio-image__frame">
+              <img src="/assets/img/cases/ponto-da-torra/loja-virtual.jpg"
+                alt="Loja virtual do Ponto da Torra" loading="lazy" />
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-tag">Loja Virtual (E-commerce)</span>
+            <h3 class="portfolio-title">Pronta para vender todos os dias</h3>
+            <p class="portfolio-text">
+              Criamos uma loja virtual completa para venda direta ao
+              consumidor, com catálogo de grãos, blends e acessórios, além
+              de um modelo de assinatura recorrente para os clientes mais
+              fiéis.
+            </p>
+            <ul class="case-list" style="margin-top: 0; margin-bottom: var(--space-xl);">
+              <li><i class="bi bi-check-circle"></i> Catálogo com variações de moagem, peso e blend</li>
+              <li><i class="bi bi-check-circle"></i> Assinatura recorrente com cobrança automática</li>
+              <li><i class="bi bi-check-circle"></i> Checkout otimizado com cartão, Pix e boleto</li>
+            </ul>
+            <a href="index.html#servicos" class="portfolio-btn">Conheça nossas lojas virtuais</a>
+          </div>
+        </article>
+
+        <!-- Frente 3 — Sistema interno -->
+        <article class="portfolio-item">
+          <div class="portfolio-image">
+            <span class="portfolio-image__circle" aria-hidden="true"></span>
+            <div class="portfolio-image__frame">
+              <img src="/assets/img/cases/ponto-da-torra/sistema-gestao.jpg"
+                alt="Sistema interno de gestão do Ponto da Torra" loading="lazy" />
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-tag">Sistema Interno de Gestão</span>
+            <h3 class="portfolio-title">Estoque e assinaturas organizados para crescer</h3>
+            <p class="portfolio-text">
+              Para sustentar o crescimento das vendas, desenvolvemos um
+              pequeno sistema de gestão interno, integrado à loja, que
+              centraliza estoque por lote de torra, assinaturas ativas e
+              relatórios de vendas.
+            </p>
+            <ul class="case-list" style="margin-top: 0; margin-bottom: var(--space-xl);">
+              <li><i class="bi bi-check-circle"></i> Controle de estoque por lote e validade de torra</li>
+              <li><i class="bi bi-check-circle"></i> Painel de assinaturas com renovação e cancelamento automatizados</li>
+              <li><i class="bi bi-check-circle"></i> Relatórios gerenciais em tempo real</li>
+            </ul>
+            <a href="index.html#servicos" class="portfolio-btn">Conheça nossos sistemas personalizados</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== METODOLOGIA ===== -->
+  <section class="case-section case-section--soft">
+    <div class="container case-section__inner" style="max-width: 1100px;">
+      <span class="case-section__eyebrow">Como Trabalhamos</span>
+      <h2 class="case-section__title">Metodologia Row Soluções Web</h2>
+
+      <div class="case-process">
+        <div class="case-process__step">
+          <img src="/assets/img/cases/ponto-da-torra/metodologia-01.jpg"
+            alt="Etapa de diagnóstico e planejamento" class="case-process__step-media" loading="lazy" />
+          <h4>Diagnóstico e Planejamento</h4>
+          <p>
+            Mapeamos a operação do Ponto da Torra, os gargalos no
+            atendimento e as metas de vendas para desenhar um plano único,
+            cobrindo site, loja e sistema desde a largada.
+          </p>
+        </div>
+        <div class="case-process__step">
+          <img src="/assets/img/cases/ponto-da-torra/metodologia-02.jpg"
+            alt="Etapa de design e desenvolvimento" class="case-process__step-media" loading="lazy" />
+          <h4>Design e Desenvolvimento</h4>
+          <p>
+            Traduzimos a identidade da marca em interfaces, desenvolvemos
+            as três frentes em paralelo e validamos cada etapa com o
+            cliente antes de avançar para a seguinte.
+          </p>
+        </div>
+        <div class="case-process__step">
+          <img src="/assets/img/cases/ponto-da-torra/metodologia-03.jpg"
+            alt="Etapa de lançamento e evolução contínua" class="case-process__step-media" loading="lazy" />
+          <h4>Lançamento e Evolução Contínua</h4>
+          <p>
+            Colocamos o projeto no ar com monitoramento ativo e seguimos
+            evoluindo loja, site e sistema com base em dados reais de uso —
+            sem deixar o projeto parado depois do lançamento.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA INTERMEDIÁRIO ===== -->
+  <section class="cta-banner">
+    <div class="container cta-banner__inner">
+      <div class="cta-banner__content">
+        <span class="section-eyebrow section-eyebrow--light">Vamos conversar?</span>
+        <h2 class="cta-banner__title">Uma operação digital pensada para crescer junto com o seu negócio</h2>
+        <p class="cta-banner__desc">
+          Assim como fizemos pelo Ponto da Torra, desenvolvemos soluções
+          sob medida para empresas que precisam de site, loja virtual ou
+          sistema — separados ou integrados em um projeto único.
+        </p>
+        <a href="https://wa.me/0000000000000" target="_blank" class="btn btn--white">Solicitar orçamento</a>
+      </div>
+      <div class="cta-banner__visual" aria-hidden="true">
+        <div class="cta-banner__screen">
+          <div class="cta-banner__screen-bar"><span></span><span></span><span></span></div>
+          <div class="cta-banner__screen-body">
+            <img src="/assets/img/cases/ponto-da-torra/cta-banner.jpg"
+              alt="Chamada para orçamento Row Soluções Web" style="width:100%; height:100%; object-fit:cover;" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESULTADOS ===== -->
+  <section class="case-section">
+    <div class="container case-section__inner">
+      <span class="case-section__eyebrow">Resultados</span>
+      <h2 class="case-section__title">O que mudou na operação do Ponto da Torra</h2>
+
+      <div class="case-results__grid" style="grid-template-columns: 1fr;">
+        <div class="case-results__item" style="align-items: flex-start; flex-direction: column; gap: var(--space-sm); padding: var(--space-xl);">
+          <h4 style="font-family: var(--font-display); font-size: 1.05rem; color: var(--color-text);">
+            <i class="bi bi-graph-up-arrow"></i> Mais visibilidade para quem busca café especial na região
+          </h4>
+          <p style="font-weight: 400; font-size: 0.95rem; color: var(--color-text-muted);">
+            Com o site institucional otimizado e a loja integrada ao mesmo
+            domínio, o Ponto da Torra passou a aparecer nas buscas de
+            clientes da região interessados em cafés especiais — um
+            alcance que antes dependia só do movimento da loja física.
+          </p>
+          <a href="index.html#servicos" class="portfolio-card__link">Saiba mais sobre presença digital →</a>
+        </div>
+        <div class="case-results__item" style="align-items: flex-start; flex-direction: column; gap: var(--space-sm); padding: var(--space-xl);">
+          <h4 style="font-family: var(--font-display); font-size: 1.05rem; color: var(--color-text);">
+            <i class="bi bi-diagram-3"></i> Mais controle sobre estoque e assinaturas
+          </h4>
+          <p style="font-weight: 400; font-size: 0.95rem; color: var(--color-text-muted);">
+            O sistema interno substituiu o controle manual em planilhas,
+            reduzindo erros de estoque e dando à equipe visibilidade
+            completa sobre assinaturas ativas, pendências e renovações —
+            tudo em um só painel.
+          </p>
+          <a href="index.html#servicos" class="portfolio-card__link">Saiba mais sobre sistemas e automação →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POR QUE ESCOLHERAM A ROW (DIFERENCIAIS) ===== -->
+  <section class="case-section case-section--soft">
+    <div class="container case-section__inner" style="max-width: 1100px;">
+      <span class="case-section__eyebrow">Diferenciais</span>
+      <h2 class="case-section__title">Por que o Ponto da Torra escolheu a Row Soluções Web</h2>
+      <p>
+        Da concepção ao suporte, o Ponto da Torra teve um único parceiro
+        cuidando de toda a operação digital — sem precisar contratar
+        fornecedores diferentes para site, loja e sistema.
+      </p>
+
+      <img src="/assets/img/cases/ponto-da-torra/diferenciais.jpg"
+        alt="Equipe Row Soluções Web trabalhando no projeto"
+        class="case-section__image" loading="lazy" />
+
+      <div class="case-recursos">
+        <div class="case-recurso">
+          <div class="case-recurso__icon"><i class="bi bi-people"></i></div>
+          <h4>Atendimento Consultivo</h4>
+          <p>Antes de propor qualquer tela, entendemos a rotina, os processos e as prioridades do negócio.</p>
+        </div>
+        <div class="case-recurso">
+          <div class="case-recurso__icon"><i class="bi bi-cpu"></i></div>
+          <h4>Tecnologia sob Medida</h4>
+          <p>Nada de soluções genéricas: site, loja e sistema desenhados para a realidade do Ponto da Torra.</p>
+        </div>
+        <div class="case-recurso">
+          <div class="case-recurso__icon"><i class="bi bi-life-preserver"></i></div>
+          <h4>Suporte Contínuo</h4>
+          <p>O relacionamento não termina no lançamento — acompanhamos performance, segurança e evolução do projeto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DEPOIMENTO ===== -->
+  <section class="case-section">
+    <div class="container case-section__inner">
+      <span class="case-section__eyebrow">Depoimento</span>
+      <h2 class="case-section__title">Um projeto pensado para durar e evoluir</h2>
+
+      <blockquote class="case-testimonial">
+        <i class="bi bi-quote case-testimonial__icon"></i>
+        <p class="case-testimonial__quote">
+          "A Row Soluções Web entendeu o nosso negócio antes de propor
+          qualquer tela. Hoje temos site, loja e sistema conversando entre
+          si, e isso mudou o jeito que a gente trabalha todos os dias."
+        </p>
+        <footer class="case-testimonial__author">
+          <strong>Marina Ferraz</strong> — sócia-fundadora do Ponto da Torra — Cafés Especiais
+        </footer>
+      </blockquote>
+      <span class="case-results__caption" style="margin-top: var(--space-sm);">Depoimento ilustrativo, elaborado para fins de demonstração de layout.</span>
+    </div>
+  </section>
+
+  <!-- ===== GALERIA ===== -->
+  <section class="case-gallery">
+    <div class="container case-section__inner" style="max-width: 1100px;">
+      <span class="case-section__eyebrow">Galeria</span>
+      <h2 class="case-section__title">Interfaces do projeto</h2>
+
+      <div class="case-gallery__grid">
+        <div class="case-gallery__item case-gallery__item--photo">
+          <img src="/assets/img/cases/ponto-da-torra/site-institucional.jpg" alt="Site institucional do Ponto da Torra" loading="lazy" />
+        </div>
+        <div class="case-gallery__item case-gallery__item--photo">
+          <img src="/assets/img/cases/ponto-da-torra/loja-virtual.jpg" alt="Loja virtual do Ponto da Torra" loading="lazy" />
+        </div>
+        <div class="case-gallery__item case-gallery__item--photo">
+          <img src="/assets/img/cases/ponto-da-torra/sistema-gestao.jpg" alt="Sistema interno de gestão do Ponto da Torra" loading="lazy" />
+        </div>
+        <div class="case-gallery__item case-gallery__item--photo">
+          <img src="/assets/img/cases/ponto-da-torra/capa.jpg" alt="Capa do projeto Ponto da Torra" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TECNOLOGIAS ===== -->
+  <!-- Nenhuma tecnologia foi listada explicitamente no arquivo Markdown; seção omitida para não inventar informações. -->
+
+ <!-- ===== CTA BANNER ===== -->
+    <section class="cta-banner">
+      <div class="container cta-banner__inner">
+        <div class="cta-banner__content">
+          <span class="section-eyebrow section-eyebrow--light">Vamos conversar?</span>
+          <h2 class="cta-banner__title">Vamos transformar sua ideia em um projeto de sucesso.</h2>
+          <p class="cta-banner__desc">Fale com nossa equipe e descubra como podemos desenvolver uma solução
+            personalizada para impulsionar os resultados da sua empresa.</p>
+          <a href="https://wa.me/0000000000000" target="_blank" class="btn btn--white">Solicitar orçamento</a>
+        </div>
+        <!-- Moldura que fica atrás da localização
+        <div class="cta-banner__visual" aria-hidden="true">
+          <div class="cta-banner__screen">
+            <div class="cta-banner__screen-bar"><span></span><span></span><span></span></div> 
+          </div> 
+        </div> -->
+        <div class="cta-banner__screen-body">
+          <div class="location-card">
+            <div class="location-card__item">
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>Ribeirão Preto - SP</span>
+            </div>
+            <div class="location-card__status offline" id="officeStatus">
+              <span class="status-dot"></span>
+              <span id="statusText">Estamos Offline</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+</main>
+
+  <!-- ===== FOOTER (idêntico ao index.html) ===== -->
+  <footer class="footer">
+    <div class="container footer__top">
+
+      <!-- Coluna 1 -->
+      <div class="footer__brand">
+        <a href="#" class="header__logo">
+          <img src="logo1.png" alt="Row Soluções Web" style="width: 140px; height: 80px; object-fit: contain " />
+          <!-- <div class="logo-brand">
+          <span class="logo-row">row</span>
+          <span class="logo-subtitle">soluções web</span>
+        </div> -->
+        </a>
+        <p class="footer__brand">Soluções digitais que </br> impulsionam o seu negócio.</p>
+        <ul class="footer__socials">
+          <li>
+            <a href="https://x.com/" target="_blank" class="footer__social-link" aria-label="Twitter">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://br.linkedin.com/" target="_blank" class="footer__social-link" aria-label="LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/" target="_blank" class="footer__social-link" aria-label="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/" target="_blank" class="footer__social-link" aria-label="YouTube">
+              <i class="bi bi-youtube"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Coluna 2 -->
+      <div class="footer__col footer__col--contact">
+        <h4 class="footer__col-title">Entre em Contato</h4>
+        <ul class="footer__links footer__contact">
+          <li>
+            <i class="bi bi-envelope-fill"></i>
+            contato@rowsolucoes.com.br
+          </li>
+          <li>
+            <i class="bi bi-telephone-fill"></i>
+            (16) 3456-7890
+          </li>
+          <li>
+            <i class="bi bi-geo-alt-fill"></i>
+            Ribeirão Preto | CEP: 14090-000
+          </li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3 -->
+      <div class="footer__col footer__col--links">
+        <h4 class="footer__col-title">Links</h4>
+        <ul class="footer__links">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#servicos">Serviços</a></li>
+          <!-- <li><a href="portfolio.html">Portfólio</a></li> -->
+          <li><a href="https://wa.me/0000000000000" target="_blank">Contato</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>© 2026 Row Soluções Web — Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== EXIT POPUP (idêntico ao index.html) ===== -->
+  <div id="exitPopup" class="exit-popup">
+    <div class="exit-popup__box">
+      <h2>🚀 Espere um instante!</h2>
+      <p>
+        Ainda não fez seu orçamento?
+        Descubra quanto custa colocar seu projeto na internet.
+      </p>
+      <ul class="exit-popup__list">
+        <li>✅ Atendimento rápido</li>
+        <li>✅ Orçamento gratuito</li>
+        <li>✅ Sem compromisso</li>
+      </ul>
+      <a href="https://wa.me/0000000000000" target="_blank" class="btn btn--primary btn--lg">
+        📲 Solicitar orçamento
+      </a>
+      <a href="#" id="closeExitPopup" class="exit-popup__close">
+        Agora não
+      </a>
+    </div>
+  </div>
+
+  <!-- script.js global (header sticky, menu mobile, exit popup) — não foi alterado -->
+  <script src="script.js"></script>
+
+  <!-- Script exclusivo desta página: filtro de categorias do portfólio -->
+  <script>
+    (function initPortfolioFilters() {
+      const filterButtons = document.querySelectorAll('#portfolioFilters .portfolio-filter-btn');
+      const cards = document.querySelectorAll('#portfolioGrid .portfolio-card');
+      const emptyMsg = document.getElementById('portfolioEmpty');
+      if (!filterButtons.length || !cards.length) return;
+
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const filter = btn.dataset.filter;
+
+          // Alterna o estado visual "ativo" entre os botões de filtro
+          filterButtons.forEach(b => b.classList.remove('portfolio-filter-btn--active'));
+          btn.classList.add('portfolio-filter-btn--active');
+
+          // Mostra apenas os cards que pertencem à categoria selecionada
+          let visibleCount = 0;
+          cards.forEach(card => {
+            const categories = (card.dataset.category || '').split(' ');
+            const matches = filter === 'todos' || categories.includes(filter);
+            card.style.display = matches ? '' : 'none';
+            if (matches) visibleCount++;
+          });
+
+          emptyMsg.classList.toggle('is-visible', visibleCount === 0);
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>
