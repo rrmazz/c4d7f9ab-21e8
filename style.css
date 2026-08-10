@@ -2053,7 +2053,7 @@ details summary::-webkit-details-marker { display: none; }
 }
 
 /* =============================================
-   CASE — GALERIA (placeholders de interface)
+   CASE Altiora — GALERIA (placeholders de interface)
    Novas classes — nenhuma classe existente foi alterada
    ============================================= */
 
@@ -2103,6 +2103,113 @@ details summary::-webkit-details-marker { display: none; }
 @media (min-width: 1024px) {
   .case-gallery__grid { grid-template-columns: repeat(4, 1fr); }
 }
+
+
+/* =============================================
+   CASE Ponto da Torra — ELEMENTOS COMPLEMENTARES
+   Novas classes — nenhuma classe existente foi alterada
+   ============================================= */
+
+/* Link secundário sobre fundo escuro (usado no hero do case) */
+.case-hero__link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255,255,255,.85);
+  transition: color var(--transition);
+}
+.case-hero__link:hover { color: var(--color-white); }
+
+/* Imagem ilustrativa avulsa dentro de uma case-section */
+.case-section__image {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  margin: var(--space-lg) 0 var(--space-xl);
+  display: block;
+}
+
+/* Tabela "ficha técnica" */
+.case-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-top: var(--space-lg);
+}
+.case-table th,
+.case-table td {
+  text-align: left;
+  padding: var(--space-md) var(--space-lg);
+  font-size: 0.92rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.case-table tr:last-child th,
+.case-table tr:last-child td { border-bottom: none; }
+.case-table th {
+  width: 35%;
+  font-weight: 700;
+  color: var(--color-text);
+  background: var(--color-bg-soft);
+}
+.case-table td { color: var(--color-text-muted); }
+
+/* Miniatura de imagem dentro de uma etapa da metodologia */
+.case-process__step-media {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+}
+
+/* Depoimento */
+.case-testimonial {
+  position: relative;
+  background: var(--color-bg-soft);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl) var(--space-xl);
+  margin-top: var(--space-lg);
+}
+.case-testimonial__icon {
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  opacity: 0.4;
+  display: block;
+  margin-bottom: var(--space-md);
+}
+.case-testimonial__quote {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: var(--space-md);
+}
+.case-testimonial__author {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+.case-testimonial__author strong { color: var(--color-text); }
+
+/* Variante da galeria com fotos reais em vez de ícones */
+.case-gallery__item--photo {
+  padding: 0;
+  background: none;
+  overflow: hidden;
+}
+.case-gallery__item--photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition);
+}
+.case-gallery__item--photo:hover img { transform: scale(1.05); }
 
 
 /*==============================
