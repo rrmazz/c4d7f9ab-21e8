@@ -319,6 +319,24 @@ details summary::-webkit-details-marker { display: none; }
   overflow: hidden;
   padding: var(--space-4xl) 0 var(--space-3xl);
 }
+
+/*referente a imagem de fundo*/
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url(imagem_fundo_hero/Mobile_version.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  opacity: 0.20;
+
+  z-index: 0;
+  pointer-events: none;
+}
+
 .hero__bg-blob {
   position: absolute;
   top: -120px; right: -120px;
@@ -326,9 +344,14 @@ details summary::-webkit-details-marker { display: none; }
   background: radial-gradient(circle, rgba(126,200,227,.18) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
+
+  z-index: 0;
 }
 
 .hero__inner {
+  position: relative; /*referente a imagem de fundo*/
+  z-index: 1; /*referente a imagem de fundo*/
+
   display: grid;
   gap: var(--space-3xl);
   align-items: center;
@@ -547,8 +570,57 @@ details summary::-webkit-details-marker { display: none; }
   border-radius: var(--radius-xl);
   padding: var(--space-xl);
   transition: box-shadow var(--transition), transform var(--transition);
+  position: relative; /*serve de referência para a imagem de fundo*/
+  overflow: hidden; /*garante que a imagem não ultrapasse as bordas arredondadas do card*/
+}
+
+/*Camada de cada imagem - responsável por criar a imagem como background*/
+.feat-card::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  opacity: 0.20; /*principal*/
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+/*HTML coloca o ícone, texto, parágrafo e lista diretamente dentro do <article> 
+essa regra faz todos esses elementos ficarem acima da imagem.*/
+.feat-card > * {
+  position: relative;
+  z-index: 1;
 }
 .feat-card:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
+
+.feat-card:nth-child(1)::before {
+  background-image: url("nossos_servicos/01-presenca-digital-1408x1636.png");
+}
+
+.feat-card:nth-child(2)::before {
+  background-image: url("nossos_servicos/02-sistemas-automacao-1408x1636.png");
+}
+
+.feat-card:nth-child(3)::before {
+  background-image: url("nossos_servicos/03-inteligencia-artificial-1408x1636.png");
+}
+
+.feat-card:nth-child(4)::before {
+  background-image: url("nossos_servicos/04-identidade-visual-marketing-1408x1840.png");
+}
+
+.feat-card:nth-child(5)::before {
+  background-image: url("nossos_servicos/05-inteligencia-negocios-1408x1840.png");
+}
+
+.feat-card:nth-child(6)::before {
+  background-image: url("nossos_servicos/06-infraestrutura-digital-1408x1840.png");
+}
 
 .feat-card__icon {
   width: 48px; height: 48px;
@@ -1204,8 +1276,13 @@ details summary::-webkit-details-marker { display: none; }
 
   /* Hero */
   .hero__inner {
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr; */
     gap: var(--space-2xl);
+  }
+  
+  /* Imagem do Background Hero — Desktop */
+  .hero::before {
+    background-image: url("imagem_fundo_hero/Desktop_version.jpeg");
   }
 
   /* Features grid */
@@ -1631,7 +1708,7 @@ details summary::-webkit-details-marker { display: none; }
 }
 .case-section__title {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-size: clamp(1.4rem, 2.3vw, 2rem);
   font-weight: 800;
   color: var(--color-text);
   letter-spacing: -0.02em;
@@ -1643,13 +1720,51 @@ details summary::-webkit-details-marker { display: none; }
   line-height: 1.8;
 }
 
+/*Referente a lista da página Portfólio 1 - Container Solução Desenvolvida*/
 .case-list {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr; /* 2 colunas = 2x2 */
   gap: var(--space-sm);
   margin-top: var(--space-lg);
 }
-.case-list li {
+.case-item {
+  display: flex;
+  flex-direction: column;      /* texto em cima, imagem embaixo */
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  overflow: hidden;
+}
+
+.case-item__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.case-item__header i {
+  color: var(--color-primary);
+  font-size: 1rem;
+}
+
+.case-item__media {
+  width: 100%;
+  height: 160px;               /* ajuste de altura */
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.case-item__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* .case-list li {
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -1660,7 +1775,9 @@ details summary::-webkit-details-marker { display: none; }
   border-radius: var(--radius-md);
   padding: var(--space-md) var(--space-lg);
 }
-.case-list li i { color: var(--color-primary); font-size: 1rem; margin-top: 2px; }
+.case-list li i { color: var(--color-primary); font-size: 1rem; margin-top: 2px; } */
+
+/*Referente a lista da página Portfólio 1 - Container Solução Desenvolvida*/
 
 .case-recursos {
   display: grid;
@@ -1693,13 +1810,29 @@ details summary::-webkit-details-marker { display: none; }
 }
 .case-recurso p { font-size: 0.9rem; }
 
+/*Código referente as miniaturas do container Processo - antigo .case-process__step
 .case-process {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-lg);
   margin-top: var(--space-lg);
   counter-reset: process;
+}*/
+
+.case-process {
+  display: block;
+  width: 100%;
+  margin-top: var(--space-lg);
 }
+
+.case-process img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: var(--radius-lg);
+}
+
 .case-process__step {
   position: relative;
   background: var(--color-white);
@@ -2086,11 +2219,12 @@ details summary::-webkit-details-marker { display: none; }
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
-.case-gallery__item i {
+/*Regras para os ícones */
+/* .case-gallery__item i {
   font-size: 2rem;
   color: var(--color-primary);
   opacity: 0.75;
-}
+} */
 .case-gallery__caption {
   font-size: 0.82rem;
   font-weight: 600;
@@ -2204,7 +2338,7 @@ details summary::-webkit-details-marker { display: none; }
 }
 .case-gallery__item--photo img {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 30px);
   object-fit: cover;
   display: block;
   transition: transform var(--transition);
