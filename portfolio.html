@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noryon Engenharia Integrada | Projeto de Site Institucional — Row Soluções Web</title>
+  <meta name="description" content="Conheça o projeto de site institucional desenvolvido pela Row Soluções Web para apresentar a Noryon Engenharia Integrada com clareza, credibilidade e foco comercial." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <style>
+    /* =========================================================
+       NORYON — página de projeto institucional
+       A identidade segue a direção visual descrita no documento:
+       azul profundo, superfícies claras, ciano discreto e bastante respiro.
+       ========================================================= */
+
+    .noryon-page {
+      color: #0D2233;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .noryon-page h1,
+    .noryon-page h2,
+    .noryon-page h3 {
+      font-family: "Plus Jakarta Sans", sans-serif;
+    }
+
+    .noryon-hero {
+      background:
+        radial-gradient(circle at 82% 18%, rgba(126, 200, 227, .22), transparent 28%),
+        linear-gradient(135deg, #F0F8FF 0%, #FFFFFF 68%);
+      padding: 2rem 0 5.5rem;
+    }
+
+    .noryon-hero__inner {
+      min-height: 650px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(420px, .95fr);
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .noryon-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      color: #1B5E8A;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .noryon-eyebrow__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #7EC8E3;
+      box-shadow: 0 0 0 5px rgba(126,200,227,.2);
+    }
+
+    .noryon-hero h1 {
+      max-width: 720px;
+      margin: 0;
+      font-size: clamp(2.5rem, 5vw, 4.4rem);
+      line-height: 1.05;
+      letter-spacing: -.045em;
+      color: #0D2B40;
+    }
+
+    .noryon-hero h2 {
+      margin: 1.2rem 0 .8rem;
+      color: #1B5E8A;
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+    }
+
+    .noryon-hero p {
+      max-width: 690px;
+      margin: 0;
+      color: #4A6B80;
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+
+    .noryon-hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 1.8rem;
+    }
+
+    .noryon-hero__micro {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem 1rem;
+      margin-top: 1.4rem;
+      color: #4A6B80;
+      font-size: .78rem;
+      font-weight: 600;
+    }
+
+    .noryon-hero__micro span {
+      padding-left: 1rem;
+      border-left: 1px solid #C8DFF0;
+    }
+
+    .noryon-hero__visual {
+      min-height: 480px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      isolation: isolate;
+    }
+
+    .noryon-hero__visual::before {
+      content: "";
+      position: absolute;
+      inset: 10% 5%;
+      border-radius: 40px;
+      background: linear-gradient(145deg, rgba(214,234,248,.8), rgba(235,247,252,.35));
+      transform: rotate(-4deg);
+      z-index: -1;
+    }
+
+    .noryon-device {
+      position: absolute;
+      background: #0D2B40;
+      border: 1px solid rgba(255,255,255,.3);
+      box-shadow: 0 28px 60px rgba(13,43,64,.2);
+    }
+
+    .noryon-device--laptop {
+      width: 72%;
+      aspect-ratio: 16 / 10;
+      left: 5%;
+      top: 14%;
+      border-radius: 14px;
+      padding: 10px;
+      transform: perspective(1000px) rotateY(-7deg) rotateX(2deg);
+    }
+
+    .noryon-device--tablet {
+      width: 32%;
+      aspect-ratio: 3 / 4;
+      right: 8%;
+      bottom: 8%;
+      border-radius: 18px;
+      padding: 8px;
+      transform: rotate(3deg);
+    }
+
+    .noryon-device--phone {
+      width: 17%;
+      aspect-ratio: 9 / 18;
+      right: 1%;
+      top: 16%;
+      border-radius: 16px;
+      padding: 5px;
+      transform: rotate(8deg);
+    }
+
+    .noryon-screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+      padding: 6%;
+    }
+
+    .noryon-screen__bar {
+      height: 7%;
+      width: 42%;
+      border-radius: 999px;
+      background: #D6EAF8;
+      margin-bottom: 10%;
+    }
+
+    .noryon-screen__hero {
+      height: 48%;
+      border-radius: 10px;
+      background:
+        linear-gradient(135deg, rgba(13,43,64,.88), rgba(27,94,138,.65)),
+        linear-gradient(90deg, #1B5E8A, #7EC8E3);
+    }
+
+    .noryon-screen__cards {
+      display: flex;
+      gap: 5%;
+      margin-top: 7%;
+    }
+
+    .noryon-screen__cards span {
+      flex: 1;
+      height: 25px;
+      border-radius: 6px;
+      background: #EBF7FC;
+      border: 1px solid #C8DFF0;
+    }
+
+    .noryon-visual-label {
+      position: absolute;
+      right: 2%;
+      bottom: 2%;
+      padding: .55rem .8rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,.88);
+      border: 1px solid #C8DFF0;
+      color: #4A6B80;
+      font-size: .72rem;
+      font-weight: 700;
+      box-shadow: 0 10px 25px rgba(13,43,64,.08);
+    }
+
+    .noryon-section {
+      padding: 6rem 0;
+      background: #fff;
+    }
+
+    .noryon-section--soft {
+      background: #F0F8FF;
+    }
+
+    .noryon-section-heading {
+      max-width: 850px;
+      margin-bottom: 2.8rem;
+    }
+
+    .noryon-section-heading h2,
+    .noryon-split__content h2,
+    .noryon-cta h2 {
+      margin: 0;
+      color: #0D2B40;
+      font-size: clamp(1.9rem, 3.3vw, 3rem);
+      line-height: 1.15;
+      letter-spacing: -.035em;
+    }
+
+    .noryon-section-heading p {
+      margin: 1.2rem 0 0;
+      color: #4A6B80;
+      line-height: 1.8;
+    }
+
+    .noryon-ficha {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border: 1px solid #C8DFF0;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 18px 45px rgba(13,43,64,.07);
+    }
+
+    .noryon-ficha > div {
+      padding: 1.4rem;
+      min-height: 130px;
+      border-right: 1px solid #C8DFF0;
+    }
+
+    .noryon-ficha > div:last-child {
+      border-right: 0;
+    }
+
+    .noryon-ficha span {
+      display: block;
+      margin-bottom: .6rem;
+      color: #4A6B80;
+      font-size: .72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .noryon-ficha strong {
+      display: block;
+      color: #0D2233;
+      line-height: 1.45;
+      font-size: .9rem;
+    }
+
+    .noryon-split {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .noryon-split--reverse > :first-child {
+      order: 2;
+    }
+
+    .noryon-split--reverse > :last-child {
+      order: 1;
+    }
+
+    .noryon-split__content p {
+      color: #4A6B80;
+      line-height: 1.8;
+      margin: 1.1rem 0 0;
+    }
+
+    .noryon-list {
+      display: grid;
+      gap: .65rem;
+      margin: 1.5rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .noryon-list li {
+      position: relative;
+      padding-left: 1.4rem;
+      color: #0D2233;
+      line-height: 1.55;
+    }
+
+    .noryon-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .62em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #7EC8E3;
+      box-shadow: 0 0 0 4px #EBF7FC;
+    }
+
+    .noryon-inline-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: #1B5E8A;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .noryon-placeholder {
+      min-height: 420px;
+      border-radius: 24px;
+      border: 1px solid #C8DFF0;
+      background:
+        linear-gradient(rgba(27,94,138,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(27,94,138,.045) 1px, transparent 1px),
+        linear-gradient(145deg, #EBF7FC, #fff);
+      background-size: 28px 28px, 28px 28px, auto;
+      box-shadow: 0 24px 60px rgba(13,43,64,.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      color: #1B5E8A;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .noryon-placeholder::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border: 1px solid rgba(27,94,138,.16);
+      border-radius: 50%;
+    }
+
+    .noryon-placeholder > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .noryon-placeholder > span {
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .noryon-placeholder strong {
+      margin-top: .7rem;
+      max-width: 340px;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 1.4rem;
+      color: #0D2B40;
+    }
+
+    .noryon-placeholder small {
+      margin-top: .65rem;
+      max-width: 360px;
+      color: #4A6B80;
+      line-height: 1.6;
+    }
+
+    .noryon-mini-devices {
+      display: flex;
+      align-items: end;
+      gap: 12px;
+      margin-top: 2rem;
+    }
+
+    .noryon-mini-devices i {
+      display: block;
+      width: 75px;
+      height: 52px;
+      border: 5px solid #0D2B40;
+      border-radius: 7px;
+      background: #fff;
+    }
+
+    .noryon-mini-devices i:nth-child(2) {
+      width: 45px;
+      height: 66px;
+      border-radius: 8px;
+    }
+
+    .noryon-mini-devices i:nth-child(3) {
+      width: 24px;
+      height: 48px;
+      border-radius: 7px;
+    }
+
+    .noryon-placeholder__form {
+      width: min(260px, 100%);
+      display: grid;
+      gap: 7px;
+      margin-top: 1.5rem;
+      text-align: left;
+    }
+
+    .noryon-placeholder__form span {
+      height: 30px;
+      border-radius: 6px;
+      background: rgba(255,255,255,.85);
+      border: 1px solid #C8DFF0;
+    }
+
+    .noryon-placeholder__form b {
+      padding: .55rem;
+      border-radius: 7px;
+      background: #1B5E8A;
+      color: #fff;
+      font-size: .7rem;
+      text-align: center;
+    }
+
+    .noryon-placeholder--code code {
+      display: block;
+      max-width: 390px;
+      margin-top: 1.2rem;
+      padding: 1rem;
+      border-radius: 12px;
+      background: #0D2B40;
+      color: #D6EAF8;
+      font-family: monospace;
+      font-size: .78rem;
+      line-height: 1.6;
+    }
+
+    .noryon-process {
+      padding: 6rem 0;
+      background: #0D2B40;
+      color: #fff;
+    }
+
+    .noryon-section-heading--dark h2 {
+      color: #fff;
+    }
+
+    .noryon-section-heading--dark p {
+      color: #D6EAF8;
+    }
+
+    .noryon-section-heading--dark .noryon-eyebrow {
+      color: #7EC8E3;
+    }
+
+    .noryon-process__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .noryon-process__grid article {
+      padding: 1.5rem;
+      border: 1px solid rgba(214,234,248,.18);
+      border-radius: 20px;
+      background: rgba(255,255,255,.045);
+    }
+
+    .noryon-process__grid article > span {
+      color: #7EC8E3;
+      font-size: .8rem;
+      font-weight: 900;
+    }
+
+    .noryon-process__grid h3 {
+      margin: .8rem 0 .7rem;
+      color: #fff;
+      font-size: 1.1rem;
+    }
+
+    .noryon-process__grid p {
+      color: #D6EAF8;
+      line-height: 1.65;
+      font-size: .88rem;
+    }
+
+    .noryon-process__grid strong {
+      display: block;
+      margin-top: 1rem;
+      color: #fff;
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .noryon-process__grid ul {
+      margin: .6rem 0 0;
+      padding-left: 1rem;
+      color: #D6EAF8;
+      font-size: .82rem;
+      line-height: 1.7;
+    }
+
+    .noryon-process__visual {
+      margin-top: 2rem;
+      padding: 1.2rem 1.5rem;
+      border: 1px solid rgba(214,234,248,.18);
+      border-radius: 18px;
+      background: rgba(255,255,255,.035);
+    }
+
+    .noryon-process__visual > span {
+      display: block;
+      color: #7EC8E3;
+      font-size: .72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 1rem;
+    }
+
+    .noryon-process__visual div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .noryon-process__visual b {
+      color: #fff;
+      font-size: .88rem;
+    }
+
+    .noryon-process__visual i {
+      color: #7EC8E3;
+      font-style: normal;
+    }
+
+    .noryon-manifesto {
+      padding: 6rem 0;
+      background:
+        linear-gradient(90deg, rgba(13,43,64,.98), rgba(13,43,64,.78)),
+        radial-gradient(circle at 80% 50%, #1B5E8A, #0D2B40);
+      color: #fff;
+    }
+
+    .noryon-manifesto__inner {
+      max-width: 920px;
+      position: relative;
+    }
+
+    .noryon-manifesto h2 {
+      max-width: 850px;
+      margin: 0;
+      color: #fff;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.12;
+      letter-spacing: -.035em;
+    }
+
+    .noryon-manifesto p {
+      max-width: 750px;
+      margin: 1.3rem 0 0;
+      color: #D6EAF8;
+      line-height: 1.8;
+      font-size: 1.03rem;
+    }
+
+    .noryon-manifesto .btn {
+      margin-top: 1.5rem;
+    }
+
+    .noryon-manifesto__visual {
+      margin-top: 2rem;
+      min-height: 170px;
+      border-radius: 20px;
+      border: 1px solid rgba(126,200,227,.25);
+      background:
+        linear-gradient(135deg, rgba(126,200,227,.14), transparent),
+        repeating-linear-gradient(90deg, transparent 0 70px, rgba(126,200,227,.08) 71px 72px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .noryon-manifesto__visual span {
+      color: #7EC8E3;
+      font-size: .72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .noryon-manifesto__visual small {
+      margin-top: .4rem;
+      color: #D6EAF8;
+    }
+
+    .noryon-pages {
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    .noryon-page-card {
+      display: grid;
+      grid-template-columns: minmax(260px, .8fr) minmax(0, 1.2fr);
+      gap: 2.5rem;
+      padding: 1.5rem;
+      border: 1px solid #C8DFF0;
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 18px 45px rgba(13,43,64,.06);
+      align-items: center;
+    }
+
+    .noryon-page-card__visual {
+      min-height: 300px;
+      border-radius: 18px;
+      background:
+        linear-gradient(rgba(27,94,138,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(27,94,138,.04) 1px, transparent 1px),
+        #EBF7FC;
+      background-size: 24px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #1B5E8A;
+      border: 1px solid #D6EAF8;
+    }
+
+    .noryon-page-card__visual span {
+      font-size: .72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .noryon-page-card__visual small {
+      margin-top: .45rem;
+      color: #4A6B80;
+    }
+
+    .noryon-page-card__visual--phone {
+      max-width: 320px;
+      width: 100%;
+      justify-self: center;
+    }
+
+    .noryon-page-card__number {
+      color: #1B5E8A;
+      font-size: .72rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .noryon-page-card h3 {
+      margin: .4rem 0 .7rem;
+      color: #0D2B40;
+      font-size: 1.5rem;
+    }
+
+    .noryon-page-card p,
+    .noryon-page-card li {
+      color: #4A6B80;
+      line-height: 1.65;
+      font-size: .9rem;
+    }
+
+    .noryon-page-card ul {
+      columns: 2;
+      padding-left: 1.2rem;
+    }
+
+    .noryon-page-card blockquote {
+      margin: 1rem 0 0;
+      padding: .9rem 1rem;
+      border-left: 3px solid #7EC8E3;
+      background: #F0F8FF;
+      color: #0D2233;
+      font-weight: 600;
+      line-height: 1.6;
+    }
+
+    .noryon-resource-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .noryon-resource-grid article {
+      padding: 1.5rem;
+      border: 1px solid #C8DFF0;
+      border-radius: 20px;
+      background: #fff;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .noryon-resource-grid article:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(13,43,64,.08);
+    }
+
+    .noryon-resource-grid i {
+      display: inline-flex;
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: #EBF7FC;
+      color: #1B5E8A;
+      font-size: 1.2rem;
+    }
+
+    .noryon-resource-grid h3 {
+      margin: 1rem 0 .55rem;
+      color: #0D2B40;
+      font-size: 1rem;
+    }
+
+    .noryon-resource-grid p {
+      margin: 0;
+      color: #4A6B80;
+      font-size: .84rem;
+      line-height: 1.7;
+    }
+
+    .noryon-metrics {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+    }
+
+    .noryon-metrics > div {
+      padding: 1.5rem;
+      border-radius: 20px;
+      border: 1px solid #C8DFF0;
+      background: #F0F8FF;
+    }
+
+    .noryon-metrics strong {
+      display: block;
+      color: #1B5E8A;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .noryon-metrics span {
+      display: block;
+      margin-top: .8rem;
+      color: #4A6B80;
+      font-size: .78rem;
+      line-height: 1.5;
+    }
+
+    .noryon-gains {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #C8DFF0;
+    }
+
+    .noryon-gains h3 {
+      margin: 0;
+      color: #0D2B40;
+    }
+
+    .noryon-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin-top: 1.5rem;
+    }
+
+    .noryon-stack span {
+      padding: .5rem .7rem;
+      border-radius: 999px;
+      background: #EBF7FC;
+      border: 1px solid #C8DFF0;
+      color: #1B5E8A;
+      font-size: .76rem;
+      font-weight: 700;
+    }
+
+    .noryon-cta {
+      padding: 6rem 0;
+      background: #0D2B40;
+      color: #fff;
+    }
+
+    .noryon-cta__inner {
+      max-width: 1000px;
+    }
+
+    .noryon-cta h2 {
+      color: #fff;
+      max-width: 900px;
+    }
+
+    .noryon-cta p {
+      max-width: 780px;
+      color: #D6EAF8;
+      line-height: 1.8;
+      margin: 1.2rem 0 0;
+    }
+
+    .noryon-cta .noryon-eyebrow {
+      color: #7EC8E3;
+    }
+
+    .noryon-cta small {
+      display: block;
+      margin-top: 1rem;
+      color: #A8C9DC;
+    }
+
+    .btn--outline {
+      border: 1px solid #C8DFF0;
+      color: #1B5E8A;
+      background: #fff;
+    }
+
+    .btn--outline-light {
+      border: 1px solid rgba(255,255,255,.45);
+      color: #fff;
+      background: transparent;
+    }
+
+    .noryon-transparency {
+      padding: 2.5rem 0;
+      background: #F0F8FF;
+      border-top: 1px solid #C8DFF0;
+    }
+
+    .noryon-transparency p {
+      max-width: 920px;
+      margin: 0;
+      color: #4A6B80;
+      line-height: 1.7;
+      font-size: .88rem;
+    }
+
+    .noryon-transparency .noryon-eyebrow {
+      margin-bottom: .65rem;
+    }
+
+    @media (max-width: 1100px) {
+      .noryon-hero__inner {
+        grid-template-columns: 1fr;
+      }
+
+      .noryon-hero__visual {
+        max-width: 760px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .noryon-ficha {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .noryon-ficha > div:nth-child(3) {
+        border-right: 0;
+      }
+
+      .noryon-ficha > div:nth-child(-n+3) {
+        border-bottom: 1px solid #C8DFF0;
+      }
+
+      .noryon-process__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .noryon-resource-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .noryon-metrics {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .noryon-hero {
+        padding-bottom: 4rem;
+      }
+
+      .noryon-hero__inner {
+        min-height: auto;
+        gap: 2.5rem;
+      }
+
+      .noryon-hero__visual {
+        min-height: 330px;
+      }
+
+      .noryon-device--laptop {
+        width: 75%;
+      }
+
+      .noryon-device--tablet {
+        width: 30%;
+      }
+
+      .noryon-device--phone {
+        width: 18%;
+      }
+
+      .noryon-section,
+      .noryon-process,
+      .noryon-manifesto,
+      .noryon-cta {
+        padding: 4rem 0;
+      }
+
+      .noryon-ficha {
+        grid-template-columns: 1fr;
+      }
+
+      .noryon-ficha > div,
+      .noryon-ficha > div:nth-child(3) {
+        border-right: 0;
+        border-bottom: 1px solid #C8DFF0;
+      }
+
+      .noryon-ficha > div:last-child {
+        border-bottom: 0;
+      }
+
+      .noryon-split {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .noryon-split--reverse > :first-child,
+      .noryon-split--reverse > :last-child {
+        order: initial;
+      }
+
+      .noryon-placeholder {
+        min-height: 320px;
+      }
+
+      .noryon-process__grid,
+      .noryon-resource-grid,
+      .noryon-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .noryon-process__visual div {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .noryon-process__visual i {
+        display: none;
+      }
+
+      .noryon-page-card {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .noryon-page-card__visual {
+        min-height: 240px;
+      }
+
+      .noryon-page-card ul {
+        columns: 1;
+      }
+
+      .noryon-hero__micro span {
+        border-left: 0;
+        padding-left: 0;
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .noryon-resource-grid article {
+        transition: none;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ===== HEADER / NAV (idêntico ao index.html) ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="img_conteudo/logo1.png" alt="Row Soluções Web" style="width: 140px; height: 80px; object-fit: contain " />
+        <!-- <div class="logo-brand">
+          <span class="logo-row">row</span>
+          <span class="logo-subtitle">soluções web</span>
+        </div> -->
+      </a>
+
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html#home" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="index.html#sobre" class="nav__link">Sobre</a>
+          </li>
+          <li class="nav__item">
+            <a href="index.html#servicos" class="nav__link">Serviços</a>
+          </li>
+          <!-- <li class="nav__item">
+            <a href="portfolio.html" class="nav__link">Portfólio</a>
+          </li> -->
+          <li class="nav__item">
+            <a href="https://wa.me/0000000000000" target="_blank" class="nav__link">Contato </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="noryon-page">
+
+    <!-- ===== HERO ===== -->
+    <section class="noryon-hero">
+      <div class="container noryon-hero__inner">
+        <div class="noryon-hero__content">
+          <a href="index.html" class="case-hero__back">← Voltar para o site</a>
+          <span class="noryon-eyebrow">
+            <span class="noryon-eyebrow__dot"></span>
+            Parceiro estratégico
+          </span>
+          <h1>Engenharia de alta precisão, traduzida em uma presença digital à altura.</h1>
+          <h2>Noryon Engenharia Integrada</h2>
+          <p>
+            A Row Soluções Web estruturou um site institucional moderno e responsivo para
+            transformar a experiência técnica da Noryon em uma apresentação clara, confiável
+            e preparada para gerar novas oportunidades de negócio.
+          </p>
+
+          <div class="noryon-hero__actions">
+            <a href="#ficha-tecnica" class="btn btn--primary">Conhecer o projeto</a>
+            <a href="index.html#contato" class="btn btn--outline">Criar meu site institucional</a>
+          </div>
+
+          <div class="noryon-hero__micro">
+            <span>Site institucional multipágina</span>
+            <span>Estratégia, UX/UI e desenvolvimento</span>
+            <span>Experiência responsiva</span>
+          </div>
+        </div>
+
+        <div class="noryon-hero__visual" aria-label="Mockup demonstrativo do site da Noryon">
+          <div class="noryon-device noryon-device--laptop">
+            <div class="noryon-device__top"></div>
+            <div class="noryon-screen">
+              <div class="noryon-screen__bar"></div>
+              <div class="noryon-screen__hero"></div>
+              <div class="noryon-screen__cards">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+          <div class="noryon-device noryon-device--tablet">
+            <div class="noryon-screen">
+              <div class="noryon-screen__bar"></div>
+              <div class="noryon-screen__hero"></div>
+              <div class="noryon-screen__cards">
+                <span></span><span></span>
+              </div>
+            </div>
+          </div>
+          <div class="noryon-device noryon-device--phone">
+            <div class="noryon-screen">
+              <div class="noryon-screen__bar"></div>
+              <div class="noryon-screen__hero"></div>
+              <div class="noryon-screen__cards">
+                <span></span><span></span>
+              </div>
+            </div>
+          </div>
+          <span class="noryon-visual-label">Mockup demonstrativo</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FICHA TÉCNICA ===== -->
+    <section class="noryon-section" id="ficha-tecnica">
+      <div class="container">
+        <div class="noryon-section-heading">
+          <span class="noryon-eyebrow">Visão geral do projeto</span>
+          <h2>Uma presença institucional desenvolvida para organizar serviços complexos, fortalecer autoridade e conduzir diferentes perfis de visitantes até o contato comercial.</h2>
+        </div>
+
+        <div class="noryon-ficha">
+          <div><span>Projeto</span><strong>Noryon Engenharia Integrada</strong></div>
+          <div><span>Segmento</span><strong>Engenharia consultiva</strong></div>
+          <div><span>Entrega</span><strong>Site institucional multipágina</strong></div>
+          <div><span>Atuação da Row</span><strong>Estratégia, UX/UI e desenvolvimento web</strong></div>
+          <div><span>Experiência</span><strong>Desktop, tablet e mobile</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DESAFIO ===== -->
+    <section class="noryon-section noryon-section--soft" id="desafio">
+      <div class="container noryon-split">
+        <div class="noryon-placeholder noryon-placeholder--technical">
+          <span>Imagem 02</span>
+          <strong>Planejamento e descoberta</strong>
+          <small>Plantas técnicas, wireframes e materiais de planejamento</small>
+        </div>
+        <div class="noryon-split__content">
+          <span class="noryon-eyebrow">O ponto de partida</span>
+          <h2>Transformar conhecimento técnico em uma comunicação simples e convincente.</h2>
+          <p>
+            A Noryon reunia experiência em diferentes frentes da engenharia, mas precisava
+            apresentar essa capacidade de forma organizada para públicos com necessidades
+            distintas. O desafio não era apenas criar uma nova interface: era construir uma
+            narrativa institucional capaz de transmitir domínio técnico sem afastar quem
+            buscava uma solução objetiva.
+          </p>
+          <p>
+            O site também precisava facilitar a descoberta dos serviços, demonstrar os setores
+            atendidos, valorizar a metodologia de trabalho e oferecer caminhos de contato claros
+            em qualquer dispositivo.
+          </p>
+          <ul class="noryon-list">
+            <li>Organizar um portfólio amplo sem tornar a navegação complexa.</li>
+            <li>Equilibrar profundidade técnica e linguagem acessível.</li>
+            <li>Construir autoridade sem depender de textos excessivamente longos.</li>
+            <li>Criar uma jornada comercial clara para diferentes perfis de decisão.</li>
+            <li>Garantir consistência visual e funcional em todas as telas.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ARQUITETURA ===== -->
+    <section class="noryon-section" id="arquitetura-informacao">
+      <div class="container noryon-split noryon-split--reverse">
+        <div class="noryon-placeholder">
+          <span>Imagem 03</span>
+          <strong>Arquitetura da informação</strong>
+          <small>Cartões representando páginas e caminhos de navegação</small>
+        </div>
+        <div class="noryon-split__content">
+          <span class="noryon-eyebrow">Clareza desde o primeiro acesso</span>
+          <h2>Uma arquitetura de conteúdo que orienta sem sobrecarregar.</h2>
+          <p>
+            Organizamos o conteúdo da Noryon em uma estrutura objetiva, permitindo que o visitante
+            compreenda rapidamente quem é a empresa, quais desafios ela resolve, em quais setores
+            atua e como iniciar uma conversa com a equipe.
+          </p>
+          <ul class="noryon-list">
+            <li>Navegação orientada pelas principais intenções do visitante.</li>
+            <li>Serviços agrupados por necessidade e contexto de aplicação.</li>
+            <li>Hierarquia visual para facilitar leitura e escaneabilidade.</li>
+            <li>Chamadas para ação posicionadas nos momentos certos da jornada.</li>
+          </ul>
+          <a href="#paginas-projeto" class="noryon-inline-link">Explorar a arquitetura →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIÊNCIA RESPONSIVA ===== -->
+    <section class="noryon-section noryon-section--soft" id="experiencia-responsiva">
+      <div class="container noryon-split">
+        <div class="noryon-placeholder noryon-placeholder--devices">
+          <span>Imagem 04</span>
+          <strong>Experiência responsiva</strong>
+          <small>Site em notebook, tablet e smartphone</small>
+          <div class="noryon-mini-devices"><i></i><i></i><i></i></div>
+        </div>
+        <div class="noryon-split__content">
+          <span class="noryon-eyebrow">Consistência em cada tela</span>
+          <h2>Uma experiência institucional que se adapta ao contexto do usuário.</h2>
+          <p>
+            Cada página foi planejada para preservar clareza, ritmo e impacto visual no desktop,
+            tablet e celular. Tipografia, imagens, menus, cartões e chamadas para ação se
+            reorganizam sem distorções e sem perda de conteúdo importante.
+          </p>
+          <ul class="noryon-list">
+            <li>Navegação mobile simples e confortável.</li>
+            <li>Imagens responsivas com recortes controlados.</li>
+            <li>Componentes flexíveis para diferentes resoluções.</li>
+            <li>Formulários objetivos e fáceis de preencher.</li>
+            <li>Leitura consistente em telas amplas ou compactas.</li>
+          </ul>
+          <a href="#paginas-projeto" class="noryon-inline-link">Ver experiência responsiva →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONVERSÃO ===== -->
+    <section class="noryon-section" id="conversao-institucional">
+      <div class="container noryon-split noryon-split--reverse">
+        <div class="noryon-placeholder">
+          <span>Imagem 05</span>
+          <strong>Conversão institucional</strong>
+          <small>Página de serviço com CTA e formulário compacto</small>
+          <div class="noryon-placeholder__form"><span></span><span></span><b>Fale com a equipe</b></div>
+        </div>
+        <div class="noryon-split__content">
+          <span class="noryon-eyebrow">Presença que conduz à ação</span>
+          <h2>Credibilidade e conversão trabalhando na mesma jornada.</h2>
+          <p>
+            O projeto conecta conteúdo institucional, provas de capacidade e pontos de contato
+            em uma sequência natural. O visitante recebe contexto suficiente para tomar uma
+            decisão e encontra caminhos claros para solicitar uma conversa técnica ou apresentar
+            uma necessidade.
+          </p>
+          <ul class="noryon-list">
+            <li>CTAs contextuais ao longo das páginas.</li>
+            <li>Formulário de contato com campos essenciais.</li>
+            <li>Acesso rápido ao WhatsApp comercial.</li>
+            <li>Destaque para setores, competências e diferenciais.</li>
+            <li>Elementos de confiança distribuídos pela navegação.</li>
+          </ul>
+          <a href="#cta" class="noryon-inline-link">Conhecer a jornada de contato →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROCESSO ===== -->
+    <section class="noryon-process" id="processo">
+      <div class="container">
+        <div class="noryon-section-heading noryon-section-heading--dark">
+          <span class="noryon-eyebrow">Método Row</span>
+          <h2>Do entendimento do negócio à publicação do site.</h2>
+          <p>
+            O processo foi organizado em quatro etapas conectadas para transformar objetivos
+            institucionais em uma experiência digital coerente, funcional e preparada para crescer.
+          </p>
+        </div>
+
+        <div class="noryon-process__grid">
+          <article>
+            <span>01</span>
+            <h3>Imersão e diagnóstico</h3>
+            <p>
+              Compreensão do posicionamento da Noryon, dos públicos de decisão, dos serviços
+              prioritários e das dúvidas que antecedem o contato comercial.
+            </p>
+            <strong>Entregas</strong>
+            <ul>
+              <li>Briefing estratégico</li>
+              <li>Mapa de públicos</li>
+              <li>Objetivos e prioridades</li>
+              <li>Referências do segmento</li>
+            </ul>
+          </article>
+
+          <article>
+            <span>02</span>
+            <h3>Conteúdo e arquitetura</h3>
+            <p>
+              Organização das páginas, definição da hierarquia de mensagens e construção das
+              jornadas de navegação e contato.
+            </p>
+            <strong>Entregas</strong>
+            <ul>
+              <li>Mapa do site</li>
+              <li>Estrutura de conteúdo</li>
+              <li>Wireframes</li>
+              <li>Estratégia de CTAs</li>
+            </ul>
+          </article>
+
+          <article>
+            <span>03</span>
+            <h3>Design e desenvolvimento</h3>
+            <p>
+              Criação da identidade visual digital e implementação responsiva dos componentes,
+              preservando desempenho, clareza e consistência.
+            </p>
+            <strong>Entregas</strong>
+            <ul>
+              <li>Interface de alta fidelidade</li>
+              <li>Componentes responsivos</li>
+              <li>Desenvolvimento front-end</li>
+              <li>Formulários e integrações de contato</li>
+            </ul>
+          </article>
+
+          <article>
+            <span>04</span>
+            <h3>Validação e publicação</h3>
+            <p>
+              Revisão técnica, testes em diferentes dispositivos, ajustes finais e preparação
+              do ambiente para lançamento.
+            </p>
+            <strong>Entregas</strong>
+            <ul>
+              <li>Testes funcionais</li>
+              <li>Revisão responsiva</li>
+              <li>Otimização técnica</li>
+              <li>Publicação e orientações de uso</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="noryon-process__visual">
+          <span>Imagem 06 — Fluxo do projeto</span>
+          <div><b>Diagnóstico</b><i>→</i><b>Arquitetura</b><i>→</i><b>Interface</b><i>→</i><b>Lançamento</b></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MANIFESTO ===== -->
+    <section class="noryon-manifesto">
+      <div class="container">
+        <div class="noryon-manifesto__inner">
+          <span class="noryon-eyebrow">Estratégia, design e desenvolvimento</span>
+          <h2>
+            Um bom site institucional não apenas apresenta uma empresa. Ele organiza sua
+            autoridade, aproxima seu público e abre espaço para novas oportunidades.
+          </h2>
+          <p>
+            Na Noryon, cada página foi pensada para transformar complexidade técnica em confiança —
+            com informação clara, navegação intuitiva e uma presença visual consistente.
+          </p>
+          <a href="#cta" class="btn btn--white">Transformar minha presença digital</a>
+          <div class="noryon-manifesto__visual" aria-hidden="true">
+            <span>Imagem 07</span>
+            <small>Arquitetura corporativa contemporânea</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PÁGINAS DO PROJETO ===== -->
+    <section class="noryon-section" id="paginas-projeto">
+      <div class="container">
+        <div class="noryon-section-heading">
+          <span class="noryon-eyebrow">Interfaces do site</span>
+          <h2>Uma estrutura institucional completa, criada para informar e aproximar.</h2>
+          <p>
+            O site foi distribuído em páginas que respondem às principais dúvidas do público
+            e conduzem o visitante de uma visão geral da empresa até o contato.
+          </p>
+        </div>
+
+        <div class="noryon-pages">
+          <article class="noryon-page-card">
+            <div class="noryon-page-card__visual"><span>Imagem 08</span><small>Home em desktop</small></div>
+            <div>
+              <span class="noryon-page-card__number">Página 01</span>
+              <h3>Home</h3>
+              <p><strong>Objetivo:</strong> apresentar posicionamento, competências e caminhos principais de navegação.</p>
+              <ul><li>Proposta de valor</li><li>Áreas de atuação</li><li>Serviços em destaque</li><li>Diferenciais</li><li>Projetos selecionados</li><li>CTA comercial</li></ul>
+              <blockquote>Engenharia integrada para projetos que exigem segurança, eficiência e visão de longo prazo.</blockquote>
+            </div>
+          </article>
+
+          <article class="noryon-page-card">
+            <div class="noryon-page-card__visual"><span>Interface 02</span><small>Página A Noryon</small></div>
+            <div>
+              <span class="noryon-page-card__number">Página 02</span>
+              <h3>A Noryon</h3>
+              <p><strong>Objetivo:</strong> construir confiança por meio de história, princípios, equipe e método.</p>
+              <ul><li>Trajetória institucional</li><li>Visão e princípios</li><li>Equipe multidisciplinar</li><li>Forma de atuação</li><li>Abrangência nacional</li></ul>
+              <blockquote>Conhecimento técnico, colaboração e responsabilidade em cada decisão de projeto.</blockquote>
+            </div>
+          </article>
+
+          <article class="noryon-page-card">
+            <div class="noryon-page-card__visual"><span>Interface 03</span><small>Soluções em desktop</small></div>
+            <div>
+              <span class="noryon-page-card__number">Página 03</span>
+              <h3>Soluções</h3>
+              <p><strong>Objetivo:</strong> explicar os serviços com clareza e conectar cada solução a uma necessidade real.</p>
+              <ul><li>Projetos multidisciplinares</li><li>Consultoria e viabilidade</li><li>Gestão e compatibilização</li><li>Integridade de ativos</li><li>Eficiência operacional e energética</li></ul>
+              <blockquote>Soluções estruturadas para reduzir incertezas e apoiar decisões técnicas mais seguras.</blockquote>
+            </div>
+          </article>
+
+          <article class="noryon-page-card">
+            <div class="noryon-page-card__visual"><span>Interface 04</span><small>Setores</small></div>
+            <div>
+              <span class="noryon-page-card__number">Página 04</span>
+              <h3>Setores</h3>
+              <p><strong>Objetivo:</strong> demonstrar conhecimento dos diferentes ambientes de atuação da empresa.</p>
+              <ul><li>Indústria</li><li>Infraestrutura corporativa</li><li>Incorporação e construção</li><li>Logística e ativos</li><li>Energia e eficiência</li></ul>
+              <blockquote>Experiência aplicada aos desafios específicos de cada operação.</blockquote>
+            </div>
+          </article>
+
+          <article class="noryon-page-card">
+            <div class="noryon-page-card__visual"><span>Imagem 09</span><small>Projetos em tablet</small></div>
+            <div>
+              <span class="noryon-page-card__number">Página 05</span>
+              <h3>Projetos</h3>
+              <p><strong>Objetivo:</strong> organizar experiências e capacidades em uma apresentação visual objetiva.</p>
+              <ul><li>Categorias de projeto</li><li>Contexto do desafio</li><li>Solução desenvolvida</li><li>Disciplinas envolvidas</li><li>Galeria de imagens</li></ul>
+              <blockquote>Projetos guiados por planejamento, integração e excelência técnica.</blockquote>
+            </div>
+          </article>
+
+          <article class="noryon-page-card">
+            <div class="noryon-page-card__visual noryon-page-card__visual--phone"><span>Imagem 10</span><small>Contato em smartphone</small></div>
+            <div>
+              <span class="noryon-page-card__number">Página 06</span>
+              <h3>Contato</h3>
+              <p><strong>Objetivo:</strong> reduzir atritos no início de uma conversa comercial.</p>
+              <ul><li>Formulário simplificado</li><li>Tipo de necessidade</li><li>Canal de WhatsApp</li><li>E-mail institucional</li><li>Localização e área de atendimento</li></ul>
+              <blockquote>Conte seu desafio. Nossa equipe está pronta para compreender o cenário e indicar o próximo passo.</blockquote>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RECURSOS ===== -->
+    <section class="noryon-section noryon-section--soft" id="recursos">
+      <div class="container">
+        <div class="noryon-section-heading">
+          <span class="noryon-eyebrow">Presença digital bem estruturada</span>
+          <h2>Recursos pensados para fortalecer comunicação, experiência e desempenho.</h2>
+        </div>
+
+        <div class="noryon-resource-grid">
+          <article><i class="bi bi-compass"></i><h3>Navegação intuitiva</h3><p>Menus, hierarquia e caminhos de navegação planejados para ajudar o visitante a encontrar informações relevantes com rapidez.</p></article>
+          <article><i class="bi bi-devices"></i><h3>Layout responsivo</h3><p>Componentes flexíveis e conteúdos adaptáveis para proporcionar uma experiência consistente em desktop, tablet e celular.</p></article>
+          <article><i class="bi bi-search"></i><h3>SEO técnico</h3><p>Estrutura semântica, títulos organizados, metadados, URLs amigáveis e preparação para indexação nos mecanismos de busca.</p></article>
+          <article><i class="bi bi-speedometer2"></i><h3>Desempenho</h3><p>Imagens otimizadas, carregamento eficiente e boas práticas técnicas para reduzir espera e preservar a navegação.</p></article>
+          <article><i class="bi bi-universal-access"></i><h3>Acessibilidade</h3><p>Contraste, navegação por teclado, textos alternativos e estrutura de conteúdo compatível com tecnologias assistivas.</p></article>
+          <article><i class="bi bi-chat-dots"></i><h3>Contato estratégico</h3><p>Formulário simplificado, chamadas para ação contextuais e acesso direto aos principais canais comerciais.</p></article>
+          <article><i class="bi bi-shield-check"></i><h3>Segurança essencial</h3><p>Configurações de HTTPS, proteção do formulário e boas práticas de publicação e manutenção.</p></article>
+          <article><i class="bi bi-layers"></i><h3>Conteúdo escalável</h3><p>Estrutura preparada para receber novas páginas, projetos, setores e conteúdos institucionais sem perder consistência.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== IMPACTO ===== -->
+    <section class="noryon-section" id="impacto">
+      <div class="container">
+        <div class="noryon-section-heading">
+          <span class="noryon-eyebrow">Objetivos mensuráveis</span>
+          <h2>Uma base digital preparada para evoluir com o negócio.</h2>
+          <p>
+            Como projeto demonstrativo, os indicadores abaixo representam metas de experiência
+            e desempenho definidas para orientar a implementação. Eles não devem ser apresentados
+            como resultados reais já alcançados.
+          </p>
+        </div>
+
+        <div class="noryon-metrics">
+          <div><strong>100%</strong><span>Experiência responsiva<br>Validação em desktop, tablet e mobile</span></div>
+          <div><strong>Até 3</strong><span>Caminho até o contato<br>A partir das principais páginas institucionais</span></div>
+          <div><strong>2,5 s</strong><span>LCP em conexão adequada<br>Meta técnica após otimização</span></div>
+          <div><strong>AA</strong><span>Acessibilidade<br>WCAG 2.2 nível AA</span></div>
+          <div><strong>100%</strong><span>SEO on-page<br>Páginas essenciais</span></div>
+        </div>
+
+        <div class="noryon-gains">
+          <h3>Ganhos esperados</h3>
+          <ul class="noryon-list">
+            <li>Percepção institucional mais sólida.</li>
+            <li>Compreensão mais rápida dos serviços.</li>
+            <li>Melhor experiência em dispositivos móveis.</li>
+            <li>Jornada comercial mais objetiva.</li>
+            <li>Base estruturada para crescimento de conteúdo.</li>
+            <li>Maior consistência entre marca, discurso e presença digital.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TECNOLOGIAS ===== -->
+    <section class="noryon-section noryon-section--soft" id="tecnologias">
+      <div class="container noryon-split">
+        <div class="noryon-placeholder noryon-placeholder--code">
+          <span>Fundamentos técnicos</span>
+          <strong>Base leve, organizada e preparada para evolução</strong>
+          <code>HTML5 · CSS3 · JavaScript · Analytics · HTTPS</code>
+        </div>
+        <div class="noryon-split__content">
+          <span class="noryon-eyebrow">Construção responsável</span>
+          <h2>Tecnologia aplicada à simplicidade, desempenho e manutenção.</h2>
+          <p>
+            A solução foi planejada com uma base técnica leve e organizada, priorizando carregamento
+            rápido, estabilidade visual e evolução segura do conteúdo institucional.
+          </p>
+          <div class="noryon-stack">
+            <span>HTML5 semântico</span><span>CSS3</span><span>Grid e Flexbox</span>
+            <span>Variáveis de design</span><span>JavaScript modular</span>
+            <span>WordPress, quando necessário</span><span>Formulário protegido</span>
+            <span>Google Analytics 4</span><span>Google Search Console</span>
+            <span>HTTPS</span><span>Cache</span><span>Backup recorrente</span>
+          </div>
+          <ul class="noryon-list">
+            <li>Código organizado e de fácil manutenção.</li>
+            <li>Componentes reutilizáveis.</li>
+            <li>Carregamento progressivo de imagens.</li>
+            <li>Prevenção de mudanças inesperadas de layout.</li>
+            <li>Metadados sociais e de busca.</li>
+            <li>Compatibilidade com navegadores atuais.</li>
+            <li>Respeito às preferências de redução de movimento.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="noryon-cta" id="cta">
+      <div class="container noryon-cta__inner">
+        <div>
+          <span class="noryon-eyebrow">Seu próximo projeto pode começar aqui</span>
+          <h2>Sua empresa também merece um site que comunique valor antes mesmo da primeira conversa.</h2>
+          <p>
+            A Row Soluções Web transforma posicionamento, conteúdo e objetivos comerciais em
+            sites institucionais modernos, responsivos e preparados para acompanhar o crescimento
+            do seu negócio.
+          </p>
+          <div class="noryon-hero__actions">
+            <a href="index.html#contato" class="btn btn--white">Solicitar orçamento</a>
+            <a href="index.html" class="btn btn--outline-light">Conhecer a Row Soluções Web</a>
+          </div>
+          <small>Conte o que sua empresa precisa comunicar. A Row ajuda a organizar o próximo passo.</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TRANSPARÊNCIA ===== -->
+    <section class="noryon-transparency">
+      <div class="container">
+        <span class="noryon-eyebrow">Nota de transparência</span>
+        <p>
+          A Noryon Engenharia Integrada é uma marca fictícia criada para demonstrar a abordagem
+          estratégica, visual e técnica da Row Soluções Web no desenvolvimento de sites institucionais.
+          Os dados e indicadores apresentados são ilustrativos.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER (idêntico ao index.html) ===== -->
+  <footer class="footer">
+    <div class="container footer__top">
+
+      <!-- Coluna 1 -->
+      <div class="footer__brand">
+        <a href="#" class="header__logo">
+          <img src="img_conteudo/logo1.png" alt="Row Soluções Web" style="width: 140px; height: 80px; object-fit: contain " />
+          <!-- <div class="logo-brand">
+          <span class="logo-row">row</span>
+          <span class="logo-subtitle">soluções web</span>
+        </div> -->
+        </a>
+        <p class="footer__brand">Soluções digitais que </br> impulsionam o seu negócio.</p>
+        <ul class="footer__socials">
+          <li>
+            <a href="https://x.com/" target="_blank" class="footer__social-link" aria-label="Twitter">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://br.linkedin.com/" target="_blank" class="footer__social-link" aria-label="LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/" target="_blank" class="footer__social-link" aria-label="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/" target="_blank" class="footer__social-link" aria-label="YouTube">
+              <i class="bi bi-youtube"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Coluna 2 -->
+      <div class="footer__col footer__col--contact">
+        <h4 class="footer__col-title">Entre em Contato</h4>
+        <ul class="footer__links footer__contact">
+          <li>
+            <i class="bi bi-envelope-fill"></i>
+            contato@rowsolucoes.com.br
+          </li>
+          <li>
+            <i class="bi bi-telephone-fill"></i>
+            (16) 3456-7890
+          </li>
+          <li>
+            <i class="bi bi-geo-alt-fill"></i>
+            Ribeirão Preto | CEP: 14090-000
+          </li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3 -->
+      <div class="footer__col footer__col--links">
+        <h4 class="footer__col-title">Links</h4>
+        <ul class="footer__links">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#servicos">Serviços</a></li>
+          <!-- <li><a href="portfolio.html">Portfólio</a></li> -->
+          <li><a href="https://wa.me/0000000000000" target="_blank">Contato</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>© 2026 Row Soluções Web — Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== EXIT POPUP (idêntico ao index.html) ===== -->
+  <div id="exitPopup" class="exit-popup">
+    <div class="exit-popup__box">
+      <h2>🚀 Espere um instante!</h2>
+      <p>
+        Ainda não fez seu orçamento?
+        Descubra quanto custa colocar seu projeto na internet.
+      </p>
+      <ul class="exit-popup__list">
+        <li>✅ Atendimento rápido</li>
+        <li>✅ Orçamento gratuito</li>
+        <li>✅ Sem compromisso</li>
+      </ul>
+      <a href="https://wa.me/0000000000000" target="_blank" class="btn btn--primary btn--lg">
+        📲 Solicitar orçamento
+      </a>
+      <a href="#" id="closeExitPopup" class="exit-popup__close">
+        Agora não
+      </a>
+    </div>
+  </div>
+
+  <!-- script.js global (header sticky, menu mobile, exit popup) — não foi alterado -->
+  <script src="script.js"></script>
+</body>
+
+</html>
