@@ -1351,8 +1351,9 @@ essa regra faz todos esses elementos ficarem acima da imagem.*/
 /* Orbit animation */
 .integrations__orbit {
   position: relative;
-  width: 280px;
-  height: 280px;
+  width: min(280px, 80vw); /* nunca passa de 280px, mas encolhe em telas menores */
+  height: min(280px, 80vw);
+  aspect-ratio: 1 / 1; /* garante que continue redondo mesmo encolhendo */
   margin-inline: auto;
 }
 
@@ -3259,6 +3260,7 @@ essa regra faz todos esses elementos ficarem acima da imagem.*/
   border-radius: 18px;
   padding: 28px;
   width: 280px;
+  max-width: 100%; /* nunca ultrapassa a largura do pai, mesmo em telas pequenas */
   box-shadow: 0 15px 35px rgba(0, 0, 0, .10);
   transition: .3s;
 }
