@@ -1910,7 +1910,6 @@ essa regra faz todos esses elementos ficarem acima da imagem.*/
   .features-grid__cards {
     grid-template-columns: repeat(2, 1fr);
   }
-}
 
 /* Footer — Tablet: 2 colunas (marca em cima, contato + links embaixo) */
 .footer__top {
@@ -1938,7 +1937,7 @@ essa regra faz todos esses elementos ficarem acima da imagem.*/
 .footer__contact li {
   max-width: none;
 }
-
+}
 
 /* ── 16. RESPONSIVE — DESKTOP (≥1024px) ──────── */
 @media (min-width: 1024px) {
