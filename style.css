@@ -2532,8 +2532,7 @@ essa regra faz todos esses elementos ficarem acima da imagem.*/
 /*Referente a lista da página Portfólio 1 - Container Solução Desenvolvida*/
 .case-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* 2 colunas = 2x2 */
+  grid-template-columns: 1fr 1fr; /* 2 colunas = 2x2 */
   gap: var(--space-sm);
   margin-top: var(--space-lg);
 }
@@ -2563,10 +2562,17 @@ essa regra faz todos esses elementos ficarem acima da imagem.*/
   font-size: 1rem;
 }
 
-.case-item__media {
+/* .case-item__media {
   width: 100%;
   height: 160px;
-  /* ajuste de altura */
+  /* ajuste de altura
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+} */
+
+.case-item__media {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* substitui a altura fixa — escala proporcionalmente */
   border-radius: var(--radius-sm);
   overflow: hidden;
 }
@@ -2575,6 +2581,13 @@ essa regra faz todos esses elementos ficarem acima da imagem.*/
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Mobile pequeno: 1 coluna para não espremer o conteúdo */
+@media (max-width: 480px) {
+  .case-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* .case-list li {
