@@ -1783,6 +1783,7 @@ essa regra faz todos esses elementos ficarem acima da imagem.*/
   gap: 6px;
   max-width: 320px;
   line-height: 1.6;
+  overflow-wrap: break-word; /*Evita o footer quebrar no iPad*/
 }
 
 .footer__socials {
@@ -1841,6 +1842,13 @@ essa regra faz todos esses elementos ficarem acima da imagem.*/
 
 .footer__bottom-nav a:hover {
   color: var(--color-white);
+}
+
+/* Evita que colunas do grid do footer sejam forçadas a esticar além da tela
+   por causa de conteúdo sem espaço para quebrar (e-mails, links longos) */
+.footer__brand,
+.footer__col {
+  min-width: 0;
 }
 
 /* ── 14. VIDEO MODAL ──────────────────────────── */
