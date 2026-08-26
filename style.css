@@ -1925,32 +1925,61 @@ essa regra faz todos esses elementos ficarem acima da imagem.*/
     grid-template-columns: repeat(2, 1fr);
   }
 
-/* Footer — Tablet: 2 colunas (marca em cima, contato + links embaixo) */
-.footer__top {
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "brand  brand"
-    "contact links";
-  text-align: left;
-  justify-items: start;
-}
+  /* Footer — Tablet: 2 colunas (marca em cima, contato + links embaixo) 
+  .footer__top {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "brand  brand"
+      "contact links";
+    text-align: left;
+    justify-items: start;
+  }
 
-.footer__brand p {
-  margin-inline: 0;
-}
+  .footer__brand p {
+    margin-inline: 0;
+  }
 
-.footer__socials {
-  justify-content: center;
-}
+  .footer__socials {
+    justify-content: center;
+  }
 
-.footer__links,
-.footer__contact li {
-  align-items: flex-start;
-}
+  .footer__links,
+  .footer__contact li {
+    align-items: flex-start;
+  }
 
-.footer__contact li {
-  max-width: none;
-}
+  .footer__contact li {
+    max-width: none;
+  }*/
+
+  /* Footer — Tablet: mantém centralizado, igual ao mobile */
+  .footer__top {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "brand"
+      "contact"
+      "links";
+    text-align: center;
+    justify-items: center;
+  }
+
+  .footer__brand p {
+    margin-inline: auto;
+  }
+
+  .footer__socials {
+    justify-content: center;
+  }
+
+  .footer__links,
+  .footer__contact li {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer__contact li {
+    max-width: none;
+  }
 }
 
 /* ── 16. RESPONSIVE — DESKTOP (≥1024px) ──────── */
