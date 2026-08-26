@@ -22,7 +22,7 @@
 /* ─── 2. HAMBURGER / MOBILE NAV ───────────────── */
 (function initMobileNav() {
   const hamburger = document.getElementById('hamburger');
-  const nav       = document.getElementById('nav');
+  const nav = document.getElementById('nav');
   if (!hamburger || !nav) return;
 
   const toggle = (force) => {
@@ -45,6 +45,17 @@
     link.addEventListener('click', () => {
       if (nav.classList.contains('nav--open')) toggle(false);
     });
+  });
+
+  // Close when clicking outside the dropdown
+  document.addEventListener('click', (e) => {
+    const isOpen = hamburger.classList.contains('open');
+    const clickedInsideNav = nav.contains(e.target);
+    const clickedHamburger = hamburger.contains(e.target);
+
+    if (isOpen && !clickedInsideNav && !clickedHamburger) {
+      toggle(false);
+    }
   });
 })();
 
@@ -69,11 +80,11 @@
 
 /* ─── 4. VIDEO MODAL ──────────────────────────── */
 (function initVideoModal() {
-  const playBtn    = document.getElementById('playBtn');
-  const modal      = document.getElementById('videoModal');
-  const backdrop   = document.getElementById('modalBackdrop');
-  const closeBtn   = document.getElementById('modalClose');
-  const iframe     = document.getElementById('modalIframe');
+  const playBtn = document.getElementById('playBtn');
+  const modal = document.getElementById('videoModal');
+  const backdrop = document.getElementById('modalBackdrop');
+  const closeBtn = document.getElementById('modalClose');
+  const iframe = document.getElementById('modalIframe');
   if (!playBtn || !modal) return;
 
   const VIDEO_URL = 'https://www.youtube.com/embed/Y8XpQpW5OVY?autoplay=1&rel=0';
@@ -110,7 +121,7 @@
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const input = form.querySelector('input[type="email"]');
-    const btn   = form.querySelector('button');
+    const btn = form.querySelector('button');
 
     if (!input.value) return;
 
@@ -211,84 +222,84 @@
 
 (function initExitPopup() {
 
-    const popup = document.getElementById("exitPopup");
-    const closeBtn = document.getElementById("closeExitPopup");
+  const popup = document.getElementById("exitPopup");
+  const closeBtn = document.getElementById("closeExitPopup");
 
-    if (!popup || !closeBtn) return;
+  if (!popup || !closeBtn) return;
 
-    // Já mostrou nesta visita?
-    if (sessionStorage.getItem("popupShown")) return;
+  // Já mostrou nesta visita?
+  if (sessionStorage.getItem("popupShown")) return;
 
-    const isMobile = window.innerWidth <= 768;
+  const isMobile = window.innerWidth <= 768;
 
-    let canShowDesktop = false;
+  let canShowDesktop = false;
 
-    // Aguarda 20 segundos (Desktop)
+  // Aguarda 20 segundos (Desktop)
+  setTimeout(() => {
+    canShowDesktop = true;
+  }, 20000);
+
+  // ============================
+  // DESKTOP (Exit Intent)
+  // ============================
+
+  if (!isMobile) {
+
+    document.addEventListener("mouseout", (e) => {
+      if (!canShowDesktop) return;
+      if (e.clientY > 5) return;
+      popup.classList.add("show");
+      sessionStorage.setItem("popupShown", "1");
+    });
+  }
+
+  // ============================
+  // MOBILE
+  // ============================
+
+  if (isMobile) {
+    let popupMobileMostrado = false;
     setTimeout(() => {
-        canShowDesktop = true;
-    }, 20000);
 
-    // ============================
-    // DESKTOP (Exit Intent)
-    // ============================
+      if (popupMobileMostrado) return;
 
-    if (!isMobile) {
+      const porcentagemRolada =
+        (window.scrollY + window.innerHeight) /
+        document.documentElement.scrollHeight;
 
-        document.addEventListener("mouseout", (e) => {
-            if (!canShowDesktop) return;
-            if (e.clientY > 5) return;
-            popup.classList.add("show");
-            sessionStorage.setItem("popupShown", "1");
-        });
+      // Rolou pelo menos 50% da página
+      if (porcentagemRolada >= 0.5) {
+        popup.classList.add("show");
+        sessionStorage.setItem("popupShown", "1");
+        popupMobileMostrado = true;
+      }
+    }, 25000);
+  }
+
+  // ============================
+  // FECHAR
+  // ============================
+
+  const fechar = () => {
+    popup.classList.remove("show");
+  };
+
+  closeBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    fechar();
+  });
+
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      fechar();
     }
+  });
 
-    // ============================
-    // MOBILE
-    // ============================
-
-    if (isMobile) {
-        let popupMobileMostrado = false;
-        setTimeout(() => {
-
-            if (popupMobileMostrado) return;
-
-            const porcentagemRolada =
-                (window.scrollY + window.innerHeight) /
-                document.documentElement.scrollHeight;
-
-            // Rolou pelo menos 50% da página
-            if (porcentagemRolada >= 0.5) {
-                popup.classList.add("show");
-                sessionStorage.setItem("popupShown", "1");
-                popupMobileMostrado = true;
-            }
-        }, 25000);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      fechar();
     }
-
-    // ============================
-    // FECHAR
-    // ============================
-
-    const fechar = () => {
-        popup.classList.remove("show");
-    };
-
-    closeBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        fechar();
-    });
-
-    popup.addEventListener("click", (e) => {
-        if (e.target === popup) {
-            fechar();
-        }
-    });
-
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-            fechar();
-        }
-    });
+  });
 })();
 
 const status = document.getElementById("officeStatus");
@@ -296,21 +307,21 @@ const text = document.getElementById("statusText");
 
 if (status) {
 
-    const agora = new Date();
-    const hora = agora.getHours();
+  const agora = new Date();
+  const hora = agora.getHours();
 
-    status.classList.remove("online", "offline");
+  status.classList.remove("online", "offline");
 
-    if (hora >= 8 && hora < 18) {
+  if (hora >= 8 && hora < 18) {
 
-        status.classList.add("online");
-        text.textContent = "Estamos Online";
+    status.classList.add("online");
+    text.textContent = "Estamos Online";
 
-    } else {
+  } else {
 
-        status.classList.add("offline");
-        text.textContent = "Estamos Offline";
+    status.classList.add("offline");
+    text.textContent = "Estamos Offline";
 
-    }
+  }
 
 }
