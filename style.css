@@ -1784,6 +1784,11 @@ essa regra faz todos esses elementos ficarem acima da imagem.*/
   max-width: 320px;
   line-height: 1.6;
   overflow-wrap: break-word; /*Evita o footer quebrar no iPad*/
+  min-width: 0; /*Evita o footer quebrar no iPad*/
+}
+
+.footer__contact li i {
+  flex-shrink: 0; /* garante que o ícone mantenha o tamanho, só o texto quebra */
 }
 
 .footer__socials {
