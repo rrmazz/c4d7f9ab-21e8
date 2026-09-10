@@ -726,11 +726,11 @@
         <h4 class="footer__col-title">Entre em Contato</h4>
         <ul class="footer__links footer__contact">
           <li>
-  <i class="bi bi-envelope-fill"></i>
-  <a href="mailto:contato@rowsolucoes.com.br">
-    contato@rowsolucoes.com.br
-  </a>
-</li>
+            <i class="bi bi-envelope-fill"></i>
+            <a href="mailto:contato@rowsolucoes.com.br">
+              contato@rowsolucoes.com.br
+            </a>
+          </li>
           <li>
             <a href="https://wa.me/5516996565030" target="_blank">
               <i class="bi bi-telephone-fill"></i>
@@ -804,7 +804,7 @@
   <a href="https://wa.me/5516996565030" target="_blank" class="whatsapp-float" aria-label="Falar no WhatsApp">
     <i class="bi bi-whatsapp"></i>
   </a>
- <!--------modal e características de cookies do site--------->
+  <!--------modal e características de cookies do site--------->
   <div class="cookie-banner" id="cookieBanner">
     <p>
       Usamos cookies para melhorar sua experiência de navegação. Ao continuar, você concorda com o uso de cookies.
@@ -814,27 +814,28 @@
       <button id="cookieDecline" class="btn btn--outline">Recusar</button>
     </div>
   </div>
- 
-<script>
-  const cookieBanner = document.getElementById('cookieBanner');
-  const cookieAccept = document.getElementById('cookieAccept');
-  const cookieDecline = document.getElementById('cookieDecline');
 
-  // Só mostra o banner se o usuário ainda não escolheu antes
-  if (!localStorage.getItem('cookieConsent')) {
-    cookieBanner.classList.add('is-visible');
-  }
+  <script>
+    const cookieBanner = document.getElementById('cookieBanner');
+    const cookieAccept = document.getElementById('cookieAccept');
+    const cookieDecline = document.getElementById('cookieDecline');
 
-  cookieAccept.addEventListener('click', () => {
-    localStorage.setItem('cookieConsent', 'accepted');
-    cookieBanner.classList.remove('is-visible');
-  });
+    // Só mostra o banner se o usuário ainda não escolheu antes
+    if (!localStorage.getItem('cookieConsent')) {
+      cookieBanner.classList.add('is-visible');
+    }
 
-  cookieDecline.addEventListener('click', () => {
-    localStorage.setItem('cookieConsent', 'declined');
-    cookieBanner.classList.remove('is-visible');
-  });
-</script>
- <!--------modal e características de cookies do site--------->
+    cookieAccept.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'accepted');
+      cookieBanner.classList.remove('is-visible');
+    });
+
+    cookieDecline.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'declined');
+      cookieBanner.classList.remove('is-visible');
+    });
+  </script>
+  <!--------modal e características de cookies do site--------->
 </body>
+
 </html>
